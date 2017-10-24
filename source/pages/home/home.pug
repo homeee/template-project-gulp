@@ -1,0 +1,23 @@
+extends ../../templates/main
+
+block vars
+	-
+		page = {
+			language: 'en',
+			name: 'home',
+			title: 'Home Page Title'
+		}
+
+block styles-head
+	p styles-head
+
+block scripts-head
+	p scripts-head
+
+block main
+	p main
+	+nav
+	+icon('cloud-download-2','modificator-class')
+
+block scripts-body
+	p scripts-body

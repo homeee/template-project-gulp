@@ -1,0 +1,42 @@
+/* main */
+
+@import './helpers/vars'
+@import './helpers/mixins'
+@import './helpers/reset'
+@import './helpers/base'
+@import './helpers/fonts'
+@import './helpers/sprite'
+
+/* common */
+
+body,
+input,
+textarea,
+button
+	font-family: $font-regular
+	font-size: $font-size
+	color: $text-color
+
+a
+	color: $link-color
+
+/* start */
+
+.width
+	margin: 0 auto
+	padding: 0 20px
+	max-width: 960px
+
+.autoprefixer-test
+	display: flex
+
+/* partials */
+
+@import './partials/header.sass'
+@import './partials/footer.sass'
+@import './partials/nav.sass'
+
+/* pages */
+
+@import './pages/home/styles.sass'
+@import './pages/about/styles.sass'

@@ -1,0 +1,16 @@
+
+# ignore distribution folder
+
+./build/
+
+# ignore npm lock-file
+
+./package-lock.json
+
+# ignore npm packages
+
+./node_modules/
+
+# ignore bower modules
+
+./source/scripts/vendor/

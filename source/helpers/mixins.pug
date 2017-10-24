@@ -1,0 +1,15 @@
+mixin nav
+	nav
+		ul.main-nav
+			each link, title in nav.navigation
+				li
+					a(href= link, title= title).item= title
+
+//- +nav
+
+mixin icon(name, mod)
+	- mod = mod || ''
+	svg(class='icon icon-' + name + ' ' + mod)
+		use(xlink:href='img/sprite.svg#' + name)
+
+//- +icon('cloud-download-2','modificator-class')

@@ -1,0 +1,21 @@
+doctype html
+
+include ../helpers/mixins
+include ../helpers/vars
+
+block vars
+
+html(lang='#{page.language}')
+	head
+		include ../partials/head
+		block styles-head
+		block scripts-head
+
+
+	body(class='page-' + page.name)
+		include ../partials/header
+		block main
+		block sidebar
+		include ../partials/footer
+		include ../partials/scripts
+		block scripts-body
