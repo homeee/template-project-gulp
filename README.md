@@ -89,10 +89,10 @@
 
 * `dev` - задачи процесса разработки
 	- `clean`
-	- `svg`, `img:dev`, `pug`, `sass:dev`, `js:dev`, `js:devCopy`, `fonts`, `other`
+	- `svg`, `img:dev`, `pug`, `sass:dev`, `js:dev`, `js:devCopy`, `fonts`
 * `build` - задачи процесса сборки
 	- `clean`
-	- `svg`, `img:build`, `pug`, `sass:build`, `js:build`, `js:buildCopy`, `fonts`, `other`
+	- `svg`, `img:build`, `pug`, `sass:build`, `js:build`, `js:buildCopy`, `fonts`
 * default
 	- `dev`
 	- `serv`, `watch`
@@ -143,7 +143,7 @@
 _Подключаемые файлы_
 
 * Страницы и json-файлы с данными подключаются в файле `./gulp/tasks/pug.js`
-* Стили страниц подключаются в файле `./source/main.sass` в секции `/* pages */`
+* Стили страниц подключаются в файле `./source/main.sass`
 * Плагины и библиотеки подключаются в файле `./gulp/tasks/js.js`
 
 ---
@@ -163,16 +163,18 @@ _Подключаемые файлы_
 
 ## Notes
 
-* Из стилей исключен clearfix за ненадобностью, теперь используется flexbox
+* Название проекта, помимо имени каталога, указано в файлах `package.json` и `bower.json`
 * Использование в файлах `*.pug` данных из файлов `*.json` с помощью цикла
 ~~~pug
-ul.menu-list
-each link, title in nav.navPages // `nav` описан в файле `pug.js`, как относящийся к файлу `navigations.json`
-	li
-		a(href= link).menu-link= title
+ul.main-nav
+	each link, title in nav.navigation // объект `nav` описан в файле `pug.js`, как относящийся к файлу `nav.json`
+		li
+			a(href= link, title= title).item= title
 ~~~
-* Для получения `sprite.svg` в `mixins.pug` есть миксин
-* Миксины стилей `mixins.styl`
+
+## Other
+
+* Из стилей исключен clearfix за ненадобностью, теперь используется flexbox (?)
 
 ## Upgrading ideas
 

@@ -5,8 +5,8 @@
 module.exports = ()=> {
 	$.gulp.task('pug', ()=> {
 		return $.gulp.src([
-			'./source/pages/home/home.pug',
-			'./source/pages/about/about.pug'
+			'./source/pages/index.pug',
+			'./source/pages/home/home.pug'
 			])
 			.pipe($.gp.pug({
 				locals : {
