@@ -1,3 +1,7 @@
-$(document).ready(function () {
+'use strict';
+
+$(document).ready(()=> {
+
 	svg4everybody();
+
 });
