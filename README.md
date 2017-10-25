@@ -102,7 +102,6 @@
 * **data**
 	- Данные `./source/data/*.json`
 * **html**
-	- Индексная страница `./source/pages/index.pug`
 	- Страницы `./source/pages/{pageName}/{pageName}.pug`
 	- Общая разметка
 		+ Шаблоны разметки
@@ -140,8 +139,9 @@
 	- `./source/media/design/svg` - Изображения оформления (svg)
 	- `./source/media/fonts` - Шрифты
 
-_Подключаемые файлы_
+_Зависимые файлы верстки_
 
+* Индексная страница `./source/pages/index.pug`
 * Страницы и json-файлы с данными подключаются в файле `./gulp/tasks/pug.js`
 * Стили страниц подключаются в файле `./source/main.sass`
 * Плагины и библиотеки подключаются в файле `./gulp/tasks/js.js`
