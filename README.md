@@ -97,7 +97,7 @@
 	- `dev`
 	- `serv`, `watch`
 
-## Структура
+## File structure
 
 * **data**
 	- Данные `./source/data/*.json`
@@ -119,7 +119,7 @@
 	- Оформление страниц
 		+ Стили `./source/pages/{pageName}/styles.sass`
 		+ Адаптив `./source/pages/{pageName}/media.sass`
-	- Шаблоны стилей для спрайтов `./templates/sprite.sass`
+	- Шаблоны стилей для спрайтов `./templates/sprite.sass` (изначально файл пустой)
 	- Общие стили
 		+ Навигация `./partials/nav.sass`
 		+ Кнопки `./partials/buttons.sass`
