@@ -1,12 +1,12 @@
 /*
-	clean - удаляет baseDir и .build/
+	clean - удаляет baseDir и .gulp/
 */
 
 module.exports = ()=> {
 	$.gulp.task('clean', ()=> {
 		return $.del([
 			$.paths.baseDir,
-			'.build/'
+			'.gulp/' // tinypng temporary folder
 		]);
 	});
 };
