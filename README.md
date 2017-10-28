@@ -70,7 +70,7 @@
 	- `gulp-clean-css` - минификация
 	- `gulp-sourcemaps` - карта стилей
 * js
-	- `gulp-uglify` - минификация
+	- `gulp-uglifyes` - минификация (es6 support)
 * svg
 	- `gulp-svgmin` - минификация
 	- `gulp-svg-sprite` - создает спрайт

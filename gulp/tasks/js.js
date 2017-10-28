@@ -23,7 +23,7 @@ module.exports = () => {
 			'./source/scripts/vendor/svg4everybody/dist/svg4everybody.min.js'
 		])
 			.pipe($.gp.concat('libs.min.js'))
-			.pipe($.gp.uglify())
+			.pipe($.gp.uglifyes())
 			.pipe($.gulp.dest($.paths.baseDir + '/js'))
 	});
 
@@ -43,7 +43,7 @@ module.exports = () => {
 			'!./source/scripts/libs.min.js'
 		])
 			.pipe($.gp.concat('main.min.js'))
-			.pipe($.gp.uglify())
+			.pipe($.gp.uglifyes())
 			.pipe($.gulp.dest($.paths.baseDir + '/js'))
 	});
 }
