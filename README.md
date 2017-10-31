@@ -6,8 +6,8 @@
 ## Resource
 
 * [Обновленный стартовый шаблон для верстки сайтов. Gulp 4](https://www.youtube.com/watch?v=pkeihmGpP1c)
-* [svg sprite template](http://glivera-team.github.io/svg/2016/06/13/svg-sprites-2.html)
-* [Как мы используем SVG-спрайты(новый способ)](https://github.com/glivera-team/glivera-team-template/blob/master/assets/sass/templates/_sprite_template.scss)
+* [svg sprite template](https://github.com/glivera-team/glivera-team-template/blob/master/assets/sass/templates/_sprite_template.scss)
+* [Как мы используем SVG-спрайты(новый способ)](http://glivera-team.github.io/svg/2016/06/13/svg-sprites-2.html)
 
 ## Технологии, применяемые в разработке
 
