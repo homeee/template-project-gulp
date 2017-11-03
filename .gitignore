@@ -1,15 +1,17 @@
 
-# ignore distribution folder
+# ignore
+
+# distribution folder
 ./build/
 
-# ignore npm lock-file
+# npm lock-file
 ./package-lock.json
 
-# ignore npm packages
+# npm packages
 ./node_modules/
 
-# ignore bower modules
+# bower modules
 ./source/scripts/vendor/
 
-# ignore tinypng tmp folder
+# tinypng tmp folder
 ./.gulp/

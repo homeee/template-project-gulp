@@ -12,7 +12,7 @@ module.exports = () => {
 			}))
 			.pipe($.gp.cheerio({
 				run: function($) {
-					// $('[fill]').removeAttr('fill'); // отключаем, для цветных изображений
+					// $('[fill]').removeAttr('fill'); // Отключаем, для цветных изображений
 					$('[stroke]').removeAttr('stroke');
 					$('[style]').removeAttr('style');
 				},
