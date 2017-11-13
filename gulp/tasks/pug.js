@@ -10,7 +10,7 @@ module.exports = ()=> {
 			])
 			.pipe($.gp.pug({
 				locals : {
-					nav: JSON.parse($.fs.readFileSync('./source/data/nav.json', 'utf8'))
+					nav: JSON.parse($.fs.readFileSync('./source/data/_nav.json', 'utf8'))
 				},
 				pretty: true
 			}))

@@ -109,40 +109,40 @@
 	- Страницы `./source/pages/{pageName}/{pageName}.pug`
 	- Общая разметка
 		+ Шаблоны разметки
-			* Страница `./templates/main.pug`
-			* Форма `./templates/form.pug`
-		+ Секция <head> `./partials/head.pug`
-		+ Скрипты <body> `./partials/scripts.pug`
-		+ "Шапка" `./partials/header.pug`
-		+ "Подвал" `./partials/footer.pug`
+			* Страница `./templates/_main.pug`
+			* Форма `./templates/_form.pug`
+		+ Секция <head> `./partials/_head.pug`
+		+ Скрипты <body> `./partials/_scripts.pug`
+		+ "Шапка" `./partials/_header.pug`
+		+ "Подвал" `./partials/_footer.pug`
 	- Вспомогательные
-		+ Переменные `./helpers/vars.pug`
-		+ Миксины `./helpers/mixins.pug`
+		+ Переменные `./helpers/_vars.pug`
+		+ Миксины `./helpers/_mixins.pug`
 * **css**
 	- Оформление страниц
 		+ Стили страниц подключаются в файле `./source/main.sass`
-		+ Стили `./source/pages/{pageName}/styles.sass`
-		+ Адаптив `./source/pages/{pageName}/media.sass`
-	- Шаблоны стилей для спрайтов `./templates/sprite.sass` (изначально файл пустой)
+		+ Стили `./source/pages/{pageName}/_styles.sass`
+		+ Адаптив `./source/pages/{pageName}/_media.sass`
+	- Шаблоны стилей для спрайтов `./templates/_sprites.sass` (изначально файл пустой)
 	- Общие стили
-		+ Навигация `./partials/nav.sass`
-		+ Кнопки `./partials/buttons.sass`
-		+ "Шапка" `./partials/header.sass`
-		+ "Подвал" `./partials/footer.sass`
+		+ Навигация `./partials/_nav.sass`
+		+ Кнопки `./partials/_buttons.sass`
+		+ "Шапка" `./partials/_header.sass`
+		+ "Подвал" `./partials/_footer.sass`
 	- Вспомогательные
-		+ Переменные `./helpers/vars.sass`
-		+ Миксины `./helpers/mixins.sass`
-		+ Сброс `./helpers/reset.sass`
-		+ Преднастройки `./helpers/base.sass`
-		+ Шрифты `./helpers/fonts.sass`
-		+ Спрайты `./helpers/sprite.sass` (файл генерируется gulp`ом)
+		+ Переменные `./helpers/_vars.sass`
+		+ Миксины `./helpers/_mixins.sass`
+		+ Сброс `./helpers/_reset.sass`
+		+ Преднастройки `./helpers/_base.sass`
+		+ Шрифты `./helpers/_fonts.sass`
+		+ Спрайты `./helpers/_sprites.sass` (файл генерируется gulp`ом)
 * **js**
 	- Скрипты `./source/scripts/main.js` - ВОПРОС - КАК БЫТЬ ЕСЛИ НА НЕКОТОРЫХ СТРАНИЦАХ ЕСТЬ СКРИПТЫ КОТОРЫЕ НА ДРУГИХ ВЫЗЫВАЮТ ОШИБКИ? ПРОТЕСТИРОВАТЬ. НУЖНО ЛИ РАЗДЕЛЯТЬ СКРИПТЫ ПО СТРАНИЦАМ?
 	- Плагины и библиотеки подключаются в файле `./gulp/tasks/js.js`
 * **media**
 	- `./source/media/content` - Изображения содержимого
-	- `./source/media/design` - Изображения оформления (jpg, png, etc.)
-	- `./source/media/design/svg` - Изображения оформления (svg)
+	- `./source/media/appearance` - Изображения оформления (jpg, png, etc.)
+	- `./source/media/appearance/svg` - Изображения оформления (svg)
 	- `./source/media/fonts` - Шрифты
 
 ---
@@ -185,3 +185,4 @@ ul.main-nav
 .pipe(sass())
 .pipe(debug({title: 'sass'}))
 ~~~
+* gulp.spritesmith

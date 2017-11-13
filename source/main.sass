@@ -2,12 +2,24 @@
 
 /* main */
 
-@import './helpers/vars'
-@import './helpers/mixins'
-@import './helpers/reset'
-@import './helpers/base'
-@import './helpers/fonts'
-@import './helpers/sprite'
+@import './helpers/_vars'
+@import './helpers/_mixins'
+
+/* reset */
+
+@import './helpers/_reset'
+
+/* base */
+
+@import './helpers/_base'
+
+/* fonts */
+
+@import './helpers/_fonts'
+
+/* sprites */
+
+@import './helpers/_sprites'
 
 /* common */
 
@@ -32,13 +44,22 @@ a
 .autoprefixer-test
 	display: flex
 
-/* partials */
+/* header */
 
-@import './partials/header.sass'
-@import './partials/footer.sass'
-@import './partials/nav.sass'
-@import './partials/buttons.sass'
+@import './partials/_header.sass'
+
+/* footer */
+
+@import './partials/_footer.sass'
+
+/* nav */
+
+@import './partials/_nav.sass'
+
+/* buttons */
+
+@import './partials/_buttons.sass'
 
 /* pages */
 
-@import './pages/home/styles.sass'
+@import './pages/home/_styles.sass'

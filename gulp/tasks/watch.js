@@ -15,7 +15,7 @@ module.exports = ()=> {
 		], $.gulp.series('pug'));
 		$.gulp.watch('./source/**/*.sass', $.gulp.series('sass:dev'));
 		$.gulp.watch('./source/scripts/*.js', $.gulp.series('js:dev', 'js:devCopy'));
-		$.gulp.watch('./source/media/design/svg/*.svg', $.gulp.series('svg'));
+		$.gulp.watch('./source/media/appearance/svg/*.svg', $.gulp.series('svg'));
 		$.gulp.watch('./source/media/**/*.{png,jpg,gif}', $.gulp.series('img:dev'));
 	});
 };
