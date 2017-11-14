@@ -1,8 +1,9 @@
 /*
-	pug - компилирует pug, подключает данные json, выгружает в baseDir и обновляет страницу
+	pug - компилирует pug, подключает данные json, выгружает в {baseDir}/ и обновляет страницу
 */
 
 module.exports = ()=> {
+
 	$.gulp.task('pug', ()=> {
 		return $.gulp.src([
 			'./source/pages/index.pug',
@@ -10,7 +11,7 @@ module.exports = ()=> {
 			])
 			.pipe($.gp.pug({
 				locals : {
-					nav: JSON.parse($.fs.readFileSync('./source/data/_nav.json', 'utf8'))
+					nav: JSON.parse($.fs.readFileSync('./source/_data/_nav.json', 'utf8'))
 				},
 				pretty: true
 			}))
@@ -20,7 +21,8 @@ module.exports = ()=> {
 					message: error.message
 				};
 			}))
-			.pipe($.gulp.dest($.paths.baseDir))
+			.pipe($.gulp.dest($.baseDir))
 			.on('end', $.browserSync.reload);
 	});
+
 };

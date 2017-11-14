@@ -1,21 +1,23 @@
 /*
 	watch - следит за изменениями в файлах
 		*.gulp, *.json
-		*.sass
+		*.scss
 		*.js
 		*.svg
-		*.png, *.jpg, *.gif
+		*.png, *.jpeg, *.jpg, *.gif
 */
 
 module.exports = ()=> {
+
 	$.gulp.task('watch', ()=> {
 		$.gulp.watch([
 			'./source/**/*.pug',
-			'./source/data/*.json'
+			'./source/_data/*.json'
 		], $.gulp.series('pug'));
-		$.gulp.watch('./source/**/*.sass', $.gulp.series('sass:dev'));
-		$.gulp.watch('./source/scripts/*.js', $.gulp.series('js:dev', 'js:devCopy'));
+		$.gulp.watch('./source/**/*.scss', $.gulp.series('scss:dev'));
+		$.gulp.watch('./source/scripts/*.js', $.gulp.series('scripts:dev', 'scripts:devCopy'));
 		$.gulp.watch('./source/media/appearance/svg/*.svg', $.gulp.series('svg'));
-		$.gulp.watch('./source/media/**/*.{png,jpg,gif}', $.gulp.series('img:dev'));
+		$.gulp.watch('./source/media/**/*.{png,jpeg,jpg,gif}', $.gulp.series('img:dev'));
 	});
+
 };

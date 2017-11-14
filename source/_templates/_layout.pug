@@ -1,20 +1,20 @@
 doctype html
 
-include ../helpers/_mixins
-include ../helpers/_vars
+include ../_helpers/_mixins
+include ../_helpers/_vars
 
 block vars
 
 html(lang=page.language)
 	head
-		include ../partials/_head
+		include ../_partials/_head
 		block styles-head
 		block scripts-head
 
 	body(class='page-' + page.name)
-		include ../partials/_header
+		include ../_partials/_header
 		block main
 		block sidebar
-		include ../partials/_footer
-		include ../partials/_scripts
+		include ../_partials/_footer
+		include ../_partials/_scripts
 		block scripts-body

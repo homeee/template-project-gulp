@@ -14,14 +14,14 @@
 * gulp - система автоматизации сборки
 * bower - установщик пакетов для frontend
 * pug - html-препроцессор и шаблонизатор
-* sass - css-препроцессор
+* scss - css-препроцессор
 * svg-спрайты
 * json-файлы с данными
 
 ## Sublime plugins
 
 * pug
-* sass
+* scss
 
 ## Requirements
 
@@ -60,7 +60,7 @@
 	- `gulp-concat` - объединение файлов в один (используется в js)
 	- `gulp-cheerio` - для внесения изменений в файлы формата xml (используется в svg)
 	- `gulp-replace` - удаление строки из файла (используется в svg)
-	- `gulp-rename` - переименовывает файлы (используется в sass)
+	- `gulp-rename` - переименовывает файлы (используется в scss)
 * html
 	- `gulp-pug` - html-препроцессор и шаблонизатор
 * css
@@ -90,10 +90,10 @@
 
 * `dev` - задачи процесса разработки
 	- `clean`
-	- `svg`, `img:dev`, `pug`, `sass:dev`, `js:dev`, `js:devCopy`, `fonts`
+	- `svg`, `img:dev`, `pug`, `scss:dev`, `vendor:dev`, `scripts:devCopy`, `fonts`
 * `build` - задачи процесса сборки
 	- `clean`
-	- `svg`, `img:build`, `pug`, `sass:build`, `js:build`, `js:buildCopy`, `fonts`
+	- `svg`, `img:build`, `pug`, `scss:build`, `vendor:build`, `scripts:buildCopy`, `fonts`
 * default
 	- `dev`
 	- `serv`, `watch`
@@ -101,47 +101,47 @@
 ## File structure
 
 * **gulp**
-	- Страницы и json-файлы с данными подключаются в файле `./gulp/tasks/pug.js`
+	- Страницы и json-файлы с данными подключаются в файле `./tasks/pug.js`
 * **data**
-	- Данные `./source/data/*.json`
+	- Данные `./source/_data/*.json`
 * **html**
 	- Индексная страница `./source/pages/index.pug`
 	- Страницы `./source/pages/{pageName}/{pageName}.pug`
 	- Общая разметка
 		+ Шаблоны разметки
-			* Страница `./templates/_main.pug`
-			* Форма `./templates/_form.pug`
-		+ Секция <head> `./partials/_head.pug`
-		+ Скрипты <body> `./partials/_scripts.pug`
-		+ "Шапка" `./partials/_header.pug`
-		+ "Подвал" `./partials/_footer.pug`
+			* Страница `./_templates/_main.pug`
+			* Форма `./_templates/_form.pug`
+		+ Секция <head> `./_partials/_head.pug`
+		+ Скрипты <body> `./_partials/_scripts.pug`
+		+ "Шапка" `./_partials/_header.pug`
+		+ "Подвал" `./_partials/_footer.pug`
 	- Вспомогательные
-		+ Переменные `./helpers/_vars.pug`
-		+ Миксины `./helpers/_mixins.pug`
+		+ Переменные `./_helpers/_vars.pug`
+		+ Миксины `./_helpers/_mixins.pug`
 * **css**
 	- Оформление страниц
-		+ Стили страниц подключаются в файле `./source/main.sass`
-		+ Стили `./source/pages/{pageName}/_styles.sass`
-		+ Адаптив `./source/pages/{pageName}/_media.sass`
-	- Шаблоны стилей для спрайтов `./templates/_sprites.sass` (изначально файл пустой)
+		+ Стили страниц подключаются в файле `./source/styles.scss`
+		+ Стили `./source/pages/{pageName}/_styles.scss`
+		+ Адаптив `./source/pages/{pageName}/_media.scss`
+	- Шаблоны стилей для спрайтов `._templates/_sprites.scss` (изначально файл пустой)
 	- Общие стили
-		+ Навигация `./partials/_nav.sass`
-		+ Кнопки `./partials/_buttons.sass`
-		+ "Шапка" `./partials/_header.sass`
-		+ "Подвал" `./partials/_footer.sass`
+		+ Навигация `./_partials/_nav.scss`
+		+ Кнопки `./_partials/_buttons.scss`
+		+ "Шапка" `./_partials/_header.scss`
+		+ "Подвал" `./_partials/_footer.scss`
 	- Вспомогательные
-		+ Переменные `./helpers/_vars.sass`
-		+ Миксины `./helpers/_mixins.sass`
-		+ Сброс `./helpers/_reset.sass`
-		+ Преднастройки `./helpers/_base.sass`
-		+ Шрифты `./helpers/_fonts.sass`
-		+ Спрайты `./helpers/_sprites.sass` (файл генерируется gulp`ом)
+		+ Переменные `./_helpers/_vars.scss`
+		+ Миксины `./_helpers/_mixins.scss`
+		+ Сброс `./_helpers/_reset.scss`
+		+ Преднастройки `./_helpers/_base.scss`
+		+ Шрифты `./_helpers/_fonts.scss`
+		+ Спрайты `./_helpers/_sprites.scss` (файл генерируется gulp`ом)
 * **js**
-	- Скрипты `./source/scripts/main.js` - ВОПРОС - КАК БЫТЬ ЕСЛИ НА НЕКОТОРЫХ СТРАНИЦАХ ЕСТЬ СКРИПТЫ КОТОРЫЕ НА ДРУГИХ ВЫЗЫВАЮТ ОШИБКИ? ПРОТЕСТИРОВАТЬ. НУЖНО ЛИ РАЗДЕЛЯТЬ СКРИПТЫ ПО СТРАНИЦАМ?
-	- Плагины и библиотеки подключаются в файле `./gulp/tasks/js.js`
+	- Скрипты `./source/scripts/scripts.js` - ВОПРОС - КАК БЫТЬ ЕСЛИ НА НЕКОТОРЫХ СТРАНИЦАХ ЕСТЬ СКРИПТЫ КОТОРЫЕ НА ДРУГИХ ВЫЗЫВАЮТ ОШИБКИ? ПРОТЕСТИРОВАТЬ. НУЖНО ЛИ РАЗДЕЛЯТЬ СКРИПТЫ ПО СТРАНИЦАМ?
+	- Плагины и библиотеки подключаются в файле `./tasks/js.js`
 * **media**
 	- `./source/media/content` - Изображения содержимого
-	- `./source/media/appearance` - Изображения оформления (jpg, png, etc.)
+	- `./source/media/appearance` - Изображения оформления (jpg, jpeg, png, etc.)
 	- `./source/media/appearance/svg` - Изображения оформления (svg)
 	- `./source/media/fonts` - Шрифты
 
@@ -168,10 +168,8 @@ ul.main-nav
 2. Убрать лишние обновления браузера из задач (разделить задачи если понадобится)
 3. Автоматизировать генерацию меню в index
 4. В файле plugins.md выбрать плагины для улучшения сборки
-5. Более плотно применять paths
-6. Применить именование index styles scripts для файлов компонентов в их сборке
-7. Нижнее подчеркивание в именах файлов шаблонов и стилей
-8. Определить удобную структуру директорий и файлов для верстки (целиком или поблочно)
+5. Определить удобную структуру директорий и файлов для верстки (целиком или поблочно)
+6. Переписать настройки на использование scss
 
 ## Upgrading ideas
 
@@ -179,10 +177,10 @@ ul.main-nav
 * bem naming - правила именования css-классов
 * gulp-svgo - оптимизация svg-файлов
 * path - модуль node.js для обработки и преобразования путей к файлам
-* gulp-debug -
+* gulp.spritesmith - спрайты для png
+* gulp-debug
 ~~~
 <!-- пример использования -->
-.pipe(sass())
-.pipe(debug({title: 'sass'}))
+.pipe(scss())
+.pipe(debug({title: 'scss'}))
 ~~~
-* gulp.spritesmith

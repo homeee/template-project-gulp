@@ -1,8 +1,19 @@
 'use strict';
 
 global.$ = {
-	paths: 			require('./gulp/paths.js') // Пути
-	, tasks: 		require('./gulp/tasks.js') // Пути к задачам
+	baseDir: './build'
+	, tasks: [
+		'./tasks/serv',
+		'./tasks/watch',
+		'./tasks/clean',
+		'./tasks/pug',
+		'./tasks/scss',
+		'./tasks/js',
+		'./tasks/svg',
+		'./tasks/img',
+		'./tasks/fonts',
+		'./tasks/other'
+	]
 	, gulp: 		require('gulp')
 	, del: 			require('del')
 	, fs: 			require('fs')
@@ -16,12 +27,12 @@ $.tasks.forEach(function(path) {
 
 $.gulp.task('dev', $.gulp.series(
 	'clean',
-	$.gulp.parallel('svg', 'img:dev', 'pug', 'sass:dev', 'js:dev', 'js:devCopy', 'fonts', 'other')
+	$.gulp.parallel('svg', 'img:dev', 'pug', 'scss:dev', 'vendor:dev', 'scripts:devCopy', 'fonts', 'other')
 ));
 
 $.gulp.task('build', $.gulp.series(
 	'clean',
-	$.gulp.parallel('svg', 'img:build', 'pug', 'sass:build', 'js:build', 'js:buildCopy', 'fonts', 'other')
+	$.gulp.parallel('svg', 'img:build', 'pug', 'scss:build', 'vendor:build', 'scripts:buildCopy', 'fonts', 'other')
 ));
 
 $.gulp.task('default', $.gulp.series(
