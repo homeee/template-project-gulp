@@ -19,7 +19,7 @@ indent_size = 4
 # Trim trailing spaces
 trim_trailing_whitespace = true
 
-[*.scss]
+[*.{scss,js}]
 
 indent_style = tab
 indent_size = 2

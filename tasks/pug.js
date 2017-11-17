@@ -1,19 +1,19 @@
 /*
-	pug - компилирует pug, подключает данные json, выгружает в {baseDir}/ и обновляет страницу
+
+	pug:dev - подключает json-данные $.paths.dev.data, компилирует pug-файлы $.paths.dev.pug, выгружает в $.paths.build.dir и обновляет страницу
+
+	pug:dev - подключает json-данные $.paths.dev.data, компилирует pug-файлы $.paths.dev.pug, минифицирует html, выгружает в $.paths.build.dir
+
 */
 
 module.exports = ()=> {
 
-	$.gulp.task('pug', ()=> {
-		return $.gulp.src([
-			'./source/pages/index.pug',
-			'./source/pages/home/home.pug'
-			])
+	$.gulp.task('pug:dev', ()=> {
+		return $.gulp.src($.paths.dev.pug)
 			.pipe($.gp.pug({
-				locals : {
-					nav: JSON.parse($.fs.readFileSync('./source/_data/_nav.json', 'utf8'))
-				},
-				pretty: true
+				data: {
+					nav: JSON.parse($.fs.readFileSync($.paths.dev.data, 'utf8'))
+				}
 			}))
 			.on('error', $.gp.notify.onError(function(error) {
 				return {
@@ -21,8 +21,24 @@ module.exports = ()=> {
 					message: error.message
 				};
 			}))
-			.pipe($.gulp.dest($.baseDir))
+			.pipe($.gulp.dest($.paths.build.dir))
 			.on('end', $.browserSync.reload);
+	});
+
+	$.gulp.task('pug:build', ()=> {
+		return $.gulp.src($.paths.dev.pug)
+			.pipe($.gp.pug({
+				data: {
+					nav: JSON.parse($.fs.readFileSync($.paths.dev.data, 'utf8'))
+				}
+			}))
+			.on('error', $.gp.notify.onError(function(error) {
+				return {
+					title: 'pug',
+					message: error.message
+				};
+			}))
+			.pipe($.gulp.dest($.paths.build.dir));
 	});
 
 };

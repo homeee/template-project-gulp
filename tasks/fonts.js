@@ -1,12 +1,14 @@
 /*
-	fonts - копирует файлы шрифтов в {baseDir}/fonts
+
+	fonts - копирует $.paths.dev.fonts в $.paths.build.fonts
+
 */
 
 module.exports = ()=> {
 
 	$.gulp.task('fonts', () => {
-		return $.gulp.src('./source/media/fonts/**/*.{woff2,woff}')
-			.pipe($.gulp.dest($.baseDir + '/fonts'))
+		return $.gulp.src($.paths.dev.fonts)
+			.pipe($.gulp.dest($.paths.build.fonts))
 	});
 
 };

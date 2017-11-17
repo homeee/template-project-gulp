@@ -2,24 +2,25 @@
 
 /* main */
 
-@import './_helpers/_vars'
-@import './_helpers/_mixins'
+@import '../_helpers/_vars';
+@import '../_helpers/_mixins';
 
 /* reset */
 
-@import './_helpers/_reset'
+@import '../_helpers/_reset';
 
 /* base */
 
-@import './_helpers/_base'
+@import '../_helpers/_base';
 
 /* fonts */
 
-@import './_helpers/_fonts'
+@import '../_helpers/_fonts';
 
 /* sprites */
 
-@import './_helpers/_sprites'
+@import '../_helpers/_icons';
+@import '../_helpers/_sprites';
 
 /* common */
 
@@ -38,7 +39,7 @@ a {
 
 /* start */
 
-.width {
+.container {
 	margin: 0 auto;
 	padding: 0 20px;
 	max-width: 960px;
@@ -50,20 +51,20 @@ a {
 
 /* header */
 
-@import './_partials/_header.scss'
+@import '../_partials/_header.scss';
 
 /* footer */
 
-@import './_partials/_footer.scss'
+@import '../_partials/_footer.scss';
 
 /* nav */
 
-@import './_partials/_nav.scss'
+@import '../_partials/_nav.scss';
 
 /* buttons */
 
-@import './_partials/_buttons.scss'
+@import '../_partials/_buttons.scss';
 
 /* pages */
 
-@import './pages/home/_styles.scss'
+@import './pages/home/_styles.scss';

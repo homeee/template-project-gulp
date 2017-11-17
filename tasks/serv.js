@@ -1,5 +1,7 @@
 /*
+
 	serv - запускает browserSync
+
 */
 
 module.exports = ()=> {
@@ -10,7 +12,7 @@ module.exports = ()=> {
 			open: true, // Автоматическое открытие окна в браузере
 			reloadOnRestart: true, // Перезагрузка страницы при перезагрузке browser-sync
 			server: {
-				baseDir: $.baseDir // Директория сервера
+				baseDir: $.paths.build.dir // Директория сервера
 			},
 			port: 8080,
 		});

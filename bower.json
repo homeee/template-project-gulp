@@ -2,6 +2,7 @@
 	"name": "template-gulp",
 	"dependencies": {
 		"jquery": "^3.2.1",
-		"svg4everybody": "^2.1.9"
+		"svg4everybody": "^2.1.9",
+		"bx-slider.js": "^4.2.12"
 	}
 }

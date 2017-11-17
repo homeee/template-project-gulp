@@ -175,7 +175,6 @@ ul.main-nav
 
 * smartgrid 2 - система сеток на flexbox
 * bem naming - правила именования css-классов
-* gulp-svgo - оптимизация svg-файлов
 * path - модуль node.js для обработки и преобразования путей к файлам
 * gulp.spritesmith - спрайты для png
 * gulp-debug

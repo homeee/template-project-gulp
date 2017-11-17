@@ -1,11 +1,13 @@
 /*
-	svg - минифицирует, чистит, создает спрайт по шаблону, создает css-файл со стилями и выгружает в {baseDir}/img
+
+	svg - минифицирует, чистит, создает спрайт по шаблону, создает css-файл со стилями и выгружает в $.paths.build.images
+
 */
 
 module.exports = () => {
 
 	$.gulp.task('svg', () => {
-		return $.gulp.src('./source/media/appearance/svg/*.svg')
+		return $.gulp.src($.paths.dev.svg)
 			.pipe($.gp.svgmin({
 				js2svg: {
 					pretty: true
@@ -25,17 +27,17 @@ module.exports = () => {
 			.pipe($.gp.svgSprite({
 				mode: {
 					symbol: {
-						sprite: '../sprites.svg',
+						sprite: $.paths.dev.svg_sprite,
 						render: {
 							scss: {
-								dest:'../../../source/_helpers/_sprites.scss',
-								template: './source/_templates/_sprites.scss'
+								dest: $.paths.dev.svg_sprite_dest,
+								template: $.paths.dev.svg_sprite_tpl
 							}
 						}
 					}
 				}
 			}))
-			.pipe($.gulp.dest($.baseDir + '/img'));
+			.pipe($.gulp.dest($.paths.build.images));
 	});
 
 };
