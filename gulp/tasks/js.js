@@ -1,9 +1,3 @@
-/*
-
-
-
-*/
-
 module.exports = () => {
 
 	$.gulp.task('js:dev', () => {
@@ -15,11 +9,7 @@ module.exports = () => {
 			.pipe($.gp.concat('libraries.js'))
 			.pipe($.gulp.dest($.paths.build.libraries));
 
-		var plugins = $.gulp.src($.paths.dev.plugins)
-			.pipe($.gulp.dest($.paths.build.plugins));
-
-		return merge(scripts, libraries, plugins)
-			.on('end', $.browserSync.reload);
+		return $.merge(scripts, libraries);
 	});
 
 	$.gulp.task('js:build', () => {
@@ -33,10 +23,12 @@ module.exports = () => {
 			.pipe($.gp.uglifyes())
 			.pipe($.gulp.dest($.paths.build.libraries));
 
-		var plugins = $.gulp.src($.paths.dev.plugins)
-			.pipe($.gulp.dest($.paths.build.plugins));
+		return $.merge(scripts, libraries);
+	});
 
-		return merge(scripts, libraries, plugins);
+	$.gulp.task('plugins', () => {
+		return $.gulp.src($.paths.dev.plugins)
+			.pipe($.gulp.dest($.paths.build.plugins));
 	});
 
 }
