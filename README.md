@@ -12,20 +12,6 @@
 * data - json
 * sprites - svg/png
 
-## install bower
-
-* `npm install bower -g`
-
-## re-install gulp
-
-* `npm rm gulp -g`
-* `npm rm gulp-cli -g`
-* `npm rm gulp --save-dev`
-* `npm rm gulp --save`
-* `npm rm gulp --save-optional`
-* `npm cache clean`
-* `npm install gulpjs/gulp-cli -g`
-
 ## install template-gulp
 
 * `git clone https://github.com/latushko-igor/template-gulp.git`
@@ -74,6 +60,7 @@
 * other
 	- `vinyl-buffer` - convert streaming files to use buffers
 	- `merge-stream` - merge streams
+	- `gulp-flatten` - remove relative path for files
 
 ## upgrading ideas (2do)
 

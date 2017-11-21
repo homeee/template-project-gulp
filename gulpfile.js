@@ -21,13 +21,13 @@ $.gulp.task('dev', $.gulp.series(
 	$.gulp.parallel(
 		'fonts', 'favicons', 'content:dev',
 		'icons', 'png:dev',
-		'ext:dev', 'pug',
+		'index', 'ext:dev', 'pug',
 		'scss:dev',
 		'js:dev', 'plugins'
 	),
-	'clean:after'
-	'clear',
-	$.gulp.parallel('serv', 'watch')
+	'clean:after',
+	$.gulp.parallel('serv', 'watch'),
+	'clear'
 ));
 
 $.gulp.task('build', $.gulp.series(
@@ -35,11 +35,11 @@ $.gulp.task('build', $.gulp.series(
 	$.gulp.parallel(
 		'fonts', 'favicons', 'content:build',
 		'icons', 'png:build',
-		'ext:build', 'pug',
+		'index', 'ext:build', 'pug',
 		'scss:build',
 		'js:build', 'plugins'
 	),
 	'clean:after',
-	'clear',
-	'serv'
+	'serv',
+	'clear'
 ));
