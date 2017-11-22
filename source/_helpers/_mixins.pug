@@ -18,7 +18,7 @@ mixin nav
 
 mixin icon(name, mod)
 	- mod = mod || ''
-	svg(class='icon icon-' + name + ' ' + mod)
+	svg(class='svgSprite svgSprite-' + name + ' ' + mod)
 		use(xlink:href='img/icons.svg#' + name)
 
 //- +icon('imgName','modificator-class')

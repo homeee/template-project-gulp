@@ -16,30 +16,18 @@ $.tasks.forEach(function(path) {
 	require(path)();
 });
 
-$.gulp.task('dev', $.gulp.series(
+$.gulp.task('dev', $.gp.sequence(
 	'clean:before',
-	$.gulp.parallel(
-		'fonts', 'favicons', 'content:dev',
-		'icons', 'png:dev',
-		'index', 'ext:dev', 'pug',
-		'scss:dev',
-		'js:dev', 'plugins'
-	),
+	['js:dev', 'plugins'],
+	['fonts', 'favicons', 'content:dev', 'icons', 'png:dev', 'index', 'ext:dev', 'pug', 'scss:dev'],
 	'clean:after',
-	$.gulp.parallel('serv', 'watch'),
+	['serv', 'watch'],
 	'clear'
 ));
 
-$.gulp.task('build', $.gulp.series(
+$.gulp.task('build', $.gp.sequence(
 	'clean:before',
-	$.gulp.parallel(
-		'fonts', 'favicons', 'content:build',
-		'icons', 'png:build',
-		'index', 'ext:build', 'pug',
-		'scss:build',
-		'js:build', 'plugins'
-	),
-	'clean:after',
-	'serv',
-	'clear'
+	['js:build', 'plugins'],
+	['fonts', 'favicons', 'content:build', 'icons', 'png:build', 'index', 'ext:build', 'pug', 'scss:build'],
+	'clean:after', 'serv', 'clear'
 ));
