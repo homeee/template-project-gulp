@@ -1,9 +1,9 @@
-module.exports = ()=> {
+module.exports = () => {
 
-	$.gulp.task('watch', ()=> {
+	$.gulp.task('watch', () => {
 		$.gulp.watch($.paths.dev.index, $.gulp.series('index'));
 
-		$.gulp.watch($.paths.dev.layout, $.gulp.series('ext:dev', 'pug'));
+		$.gulp.watch($.paths.dev.layout, $.gulp.series('ext:dev', 'pug:dev'));
 
 		$.gulp.watch($.paths.dev.scss, $.gulp.series('scss:dev'));
 

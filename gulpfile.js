@@ -9,25 +9,25 @@ global.$ = {
 	browserSync: 		require('browser-sync').create(),
 	buffer: 				require('vinyl-buffer'),
 	merge: 					require('merge-stream'),
-	gp: 						require('gulp-load-plugins')()
+	lp: 						require('gulp-load-plugins')()
 };
 
 $.tasks.forEach(function(path) {
 	require(path)();
 });
 
-$.gulp.task('dev', $.gp.sequence(
+$.gulp.task('dev', $.gulp.series(
 	'clean:before',
-	['js:dev', 'plugins'],
-	['fonts', 'favicons', 'content:dev', 'icons', 'png:dev', 'index', 'ext:dev', 'pug', 'scss:dev'],
-	'clean:after',
-	['serv', 'watch'],
-	'clear'
+	'ext:dev',
+	$.gulp.parallel('fonts', 'favicons', 'content:dev', 'icons', 'png:dev', 'index', 'pug:dev', 'scss:dev', 'js:dev', 'plugins'),
+	$.gulp.parallel('clean:after', 'clear', 'serv', 'watch'),
+
 ));
 
-$.gulp.task('build', $.gp.sequence(
+$.gulp.task('build', $.gulp.series(
 	'clean:before',
-	['js:build', 'plugins'],
-	['fonts', 'favicons', 'content:build', 'icons', 'png:build', 'index', 'ext:build', 'pug', 'scss:build'],
-	'clean:after', 'serv', 'clear'
+	'ext:build',
+	$.gulp.parallel('js:build', 'plugins'),
+	$.gulp.parallel('fonts', 'favicons', 'content:build', 'icons', 'png:build', 'index', 'pug:build', 'scss:build'),
+	$.gulp.parallel('clean:after', 'clear', 'serv')
 ));

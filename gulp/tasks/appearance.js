@@ -2,12 +2,12 @@ module.exports = () => {
 
 	$.gulp.task('icons', () => {
 		return $.gulp.src($.paths.dev.appearance.svg_icons)
-			.pipe($.gp.svgmin({
+			.pipe($.lp.svgmin({
 				js2svg: {
 					pretty: true
 				}
 			}))
-			.pipe($.gp.cheerio({
+			.pipe($.lp.cheerio({
 				run: function($) {
 					$('[fill]').removeAttr('fill'); // Отключаем, для мультицветовых изображений
 					$('[stroke]').removeAttr('stroke');
@@ -17,8 +17,8 @@ module.exports = () => {
 					xmlMode: true
 				}
 			}))
-			.pipe($.gp.replace('&gt;', '>'))
-			.pipe($.gp.svgSprite({
+			.pipe($.lp.replace('&gt;', '>'))
+			.pipe($.lp.svgSprite({
 				mode: {
 					symbol: {
 						sprite: $.paths.dev.appearance.svg_sprite,
@@ -36,8 +36,8 @@ module.exports = () => {
 
 	$.gulp.task('png:dev', () => {
 		var convertSvg = $.gulp.src($.paths.dev.appearance.svg_to_png)
-			.pipe($.gp.raster())
-			.pipe($.gp.rename({
+			.pipe($.lp.raster())
+			.pipe($.lp.rename({
 				extname: '.png'
 			}))
 			.pipe($.gulp.dest($.paths.dev.appearance.tmp));
@@ -46,7 +46,7 @@ module.exports = () => {
 				$.paths.dev.appearance.tmp + '/*.png',
 				$.paths.dev.appearance.png
 			])
-			.pipe($.gp.spritesmith({
+			.pipe($.lp.spritesmith({
 				imgName: $.paths.dev.appearance.png_sprite,
 				cssName: $.paths.dev.appearance.png_sprite_dest,
 				cssTemplate: $.paths.dev.appearance.png_sprite_tpl
@@ -57,7 +57,7 @@ module.exports = () => {
 			.pipe($.gulp.dest($.paths.build.images));
 
 		var cssStream = spriteData.css
-			.pipe($.gp.autoprefixer({
+			.pipe($.lp.autoprefixer({
 				browsers: ['last 3 version']
 			}))
 			.pipe($.gulp.dest($.paths.build.styles));
@@ -67,12 +67,12 @@ module.exports = () => {
 
 	$.gulp.task('png:build', () => {
 		var convertSvg = $.gulp.src($.paths.dev.appearance.svg_to_png)
-			.pipe($.gp.svgmin({
+			.pipe($.lp.svgmin({
 					js2svg: {
 						pretty: true
 					}
 				}))
-				.pipe($.gp.cheerio({
+				.pipe($.lp.cheerio({
 					run: function($) {
 						// $('[fill]').removeAttr('fill'); // Отключаем, для мультицветовых изображений
 						$('[stroke]').removeAttr('stroke');
@@ -82,9 +82,9 @@ module.exports = () => {
 						xmlMode: true
 					}
 				}))
-			.pipe($.gp.replace('&gt;', '>'))
-			.pipe($.gp.raster())
-				.pipe($.gp.rename({
+			.pipe($.lp.replace('&gt;', '>'))
+			.pipe($.lp.raster())
+				.pipe($.lp.rename({
 					extname: '.png'
 			}))
 			.pipe($.gulp.dest($.paths.dev.appearance.tmp));
@@ -93,7 +93,7 @@ module.exports = () => {
 				$.paths.dev.appearance.tmp + '/*.png',
 				$.paths.dev.appearance.png
 			])
-			.pipe($.gp.spritesmith({
+			.pipe($.lp.spritesmith({
 				imgName: $.paths.dev.appearance.png_sprite,
 				cssName: $.paths.dev.appearance.png_sprite_dest,
 				cssTemplate: $.paths.dev.appearance.png_sprite_tpl
@@ -101,15 +101,15 @@ module.exports = () => {
 
 		var imgStream = spriteData.img
 			.pipe($.buffer())
-			.pipe($.gp.tinypng('1L0ljft7_aKIby5b_5QhL8ziQJ8MYCQH'))
+			.pipe($.lp.tinypng('1L0ljft7_aKIby5b_5QhL8ziQJ8MYCQH'))
 			.pipe($.gulp.dest($.paths.build.images));
 
 		var cssStream = spriteData.css
-			.pipe($.gp.autoprefixer({
+			.pipe($.lp.autoprefixer({
 				browsers: ['last 3 version']
 			}))
-			.pipe($.gp.csscomb())
-			.pipe($.gp.cleanCss())
+			.pipe($.lp.csscomb())
+			.pipe($.lp.cleanCss())
 			.pipe($.gulp.dest($.paths.build.styles));
 
 		return $.merge(convertSvg, imgStream, cssStream);

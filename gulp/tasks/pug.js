@@ -1,29 +1,35 @@
-module.exports = ()=> {
+module.exports = () => {
 
-	$.gulp.task('index', ()=> {
+	$.gulp.task('index', () => {
 		return $.gulp.src($.paths.dev.index)
-			.pipe($.gp.pug({
+			.pipe($.lp.pug({
 				data: {
 					index: JSON.parse($.fs.readFileSync($.paths.dev.data.index, 'utf8'))
 				}
 			}))
-			.pipe($.gp.debug({
-				title: 'index.js - "index" - (pug)'
-			}))
 			.pipe($.gulp.dest($.paths.build.dir));
 	});
 
-	$.gulp.task('pug', ()=> {
+	$.gulp.task('pug:dev', () => {
 		return $.gulp.src($.paths.dev.pages)
-			.pipe($.gp.pug({
+			.pipe($.lp.pug({
+				pretty: true,
 				data: {
 					nav: JSON.parse($.fs.readFileSync($.paths.dev.data.nav, 'utf8'))
 				}
 			}))
-			.pipe($.gp.debug({
-				title: 'index.js - "pug" - (pug)'
+			.pipe($.lp.flatten())
+			.pipe($.gulp.dest($.paths.build.dir));
+	});
+
+	$.gulp.task('pug:build', () => {
+		return $.gulp.src($.paths.dev.pages)
+			.pipe($.lp.pug({
+				data: {
+					nav: JSON.parse($.fs.readFileSync($.paths.dev.data.nav, 'utf8'))
+				}
 			}))
-			.pipe($.gp.flatten())
+			.pipe($.lp.flatten())
 			.pipe($.gulp.dest($.paths.build.dir));
 	});
 

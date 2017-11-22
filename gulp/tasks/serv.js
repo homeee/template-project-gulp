@@ -1,6 +1,6 @@
-module.exports = ()=> {
+module.exports = () => {
 
-	$.gulp.task('serv', ()=> {
+	$.gulp.task('serv', () => {
 		$.browserSync.init({
 			notify: true,
 			open: true,

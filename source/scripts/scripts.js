@@ -1,6 +1,6 @@
 'use strict';
 
-$(document).ready(()=> {
+$(document).ready(() => {
 
 	svg4everybody();
 

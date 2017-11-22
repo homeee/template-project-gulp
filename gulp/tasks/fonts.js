@@ -1,4 +1,4 @@
-module.exports = ()=> {
+module.exports = () => {
 
 	$.gulp.task('fonts', () => {
 		return $.gulp.src($.paths.dev.appearance.fonts)

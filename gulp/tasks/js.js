@@ -2,11 +2,11 @@ module.exports = () => {
 
 	$.gulp.task('js:dev', () => {
 		var scripts = $.gulp.src($.paths.dev.scripts)
-			.pipe($.gp.concat('scripts.js'))
+			.pipe($.lp.concat('scripts.js'))
 			.pipe($.gulp.dest($.paths.build.scripts));
 
 		var libraries = $.gulp.src($.paths.dev.libraries)
-			.pipe($.gp.concat('libraries.js'))
+			.pipe($.lp.concat('libraries.js'))
 			.pipe($.gulp.dest($.paths.build.libraries));
 
 		return $.merge(scripts, libraries);
@@ -14,13 +14,13 @@ module.exports = () => {
 
 	$.gulp.task('js:build', () => {
 		var scripts = $.gulp.src($.paths.dev.scripts)
-			.pipe($.gp.concat('scripts.min.js'))
-			.pipe($.gp.uglifyes())
+			.pipe($.lp.concat('scripts.min.js'))
+			.pipe($.lp.uglifyes())
 			.pipe($.gulp.dest($.paths.build.scripts));
 
 		var libraries = $.gulp.src($.paths.dev.libraries)
-			.pipe($.gp.concat('libraries.min.js'))
-			.pipe($.gp.uglifyes())
+			.pipe($.lp.concat('libraries.min.js'))
+			.pipe($.lp.uglifyes())
 			.pipe($.gulp.dest($.paths.build.libraries));
 
 		return $.merge(scripts, libraries);
