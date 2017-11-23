@@ -2,7 +2,7 @@ module.exports = () => {
 
 	$.gulp.task('content:dev', () => {
 		return $.gulp.src($.paths.dev.content.all)
-			.pipe($.gulp.dest($.paths.build.images));
+			.pipe($.gulp.dest($.paths.build.content));
 	});
 
 	$.gulp.task('content:build', () => {
@@ -22,11 +22,11 @@ module.exports = () => {
 				}
 			}))
 			.pipe($.lp.replace('&gt;', '>'))
-			.pipe($.gulp.dest($.paths.build.images));
+			.pipe($.gulp.dest($.paths.build.content));
 
 		var content = $.gulp.src($.paths.dev.content.other)
 			.pipe($.lp.tinypng('1L0ljft7_aKIby5b_5QhL8ziQJ8MYCQH'))
-			.pipe($.gulp.dest($.paths.build.images));
+			.pipe($.gulp.dest($.paths.build.content));
 
 		return $.merge(contentSvg, content);
 	});

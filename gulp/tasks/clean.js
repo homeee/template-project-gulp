@@ -7,7 +7,6 @@ module.exports = () => {
 	$.gulp.task('clean:after', () => {
 		return $.del([
 			$.paths.dev.partials_tmp,
-			$.paths.dev.appearance.tmp,
 			$.paths.build.tinypng_tmp
 		]);
 	});
@@ -16,6 +15,7 @@ module.exports = () => {
 		var svg_sprite = $.fs.writeFileSync('./source/_helpers/_svg_sprite.scss', '');
 		var png_sprite = $.fs.writeFileSync('./source/_helpers/_png_sprite.scss', '');
 		cb();
+
 		return [svg_sprite, png_sprite];
 	});
 

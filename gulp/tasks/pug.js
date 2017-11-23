@@ -15,7 +15,7 @@ module.exports = () => {
 			.pipe($.lp.pug({
 				pretty: true,
 				data: {
-					nav: JSON.parse($.fs.readFileSync($.paths.dev.data.nav, 'utf8'))
+					main: JSON.parse($.fs.readFileSync($.paths.dev.data.main, 'utf8'))
 				}
 			}))
 			.pipe($.lp.flatten())
@@ -26,7 +26,7 @@ module.exports = () => {
 		return $.gulp.src($.paths.dev.pages)
 			.pipe($.lp.pug({
 				data: {
-					nav: JSON.parse($.fs.readFileSync($.paths.dev.data.nav, 'utf8'))
+					main: JSON.parse($.fs.readFileSync($.paths.dev.data.main, 'utf8'))
 				}
 			}))
 			.pipe($.lp.flatten())

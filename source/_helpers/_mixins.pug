@@ -1,7 +1,7 @@
 mixin index
 	nav
 		ul.index
-			each link, title in index.index
+			each link, title in index.pages
 				li
 					a(href= link, title= title).item= title
 
@@ -10,7 +10,7 @@ mixin index
 mixin nav
 	nav
 		ul.main-nav
-			each link, title in nav.navigation
+			each link, title in main.navigation
 				li
 					a(href= link, title= title).item= title
 

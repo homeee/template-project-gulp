@@ -1,6 +1,6 @@
 module.exports = [
 
-	'./gulp/tasks/serv',
+	'./gulp/tasks/server',
 	'./gulp/tasks/watch',
 	'./gulp/tasks/clean',
 	'./gulp/tasks/pug',
@@ -10,5 +10,5 @@ module.exports = [
 	'./gulp/tasks/content',
 	'./gulp/tasks/fonts',
 	'./gulp/tasks/favicons',
-	'./gulp/tasks/ext'
+	'./gulp/tasks/extentions'
 ];

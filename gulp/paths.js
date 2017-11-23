@@ -45,7 +45,6 @@ module.exports = {
 			svg_sprite_tpl: 			'./source/_templates/_svg_sprite.scss', // watcher
 
 			svg_to_png: 				'./source/media/appearance/svg/*.svg', // watcher
-			tmp: 								'./source/media/appearance/svg/tmp',
 			png: 								'./source/media/appearance/*.png', // {jpeg,jpg,bmp,gif} & watcher
 			// relative to $.paths.build.images
 				png_sprite: 				'./sprite.png',
