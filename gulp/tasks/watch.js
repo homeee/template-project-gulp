@@ -1,9 +1,18 @@
 module.exports = () => {
 
 	$.gulp.task('watch', () => {
-		$.gulp.watch($.paths.dev.index, $.gulp.series('index'));
+		$.gulp.watch([
+			$.paths.dev.data,
+			$.paths.dev.index
+		], $.gulp.series('index'));
 
-		$.gulp.watch($.paths.dev.layout, $.gulp.series('ext:dev', 'pug:dev'));
+		$.gulp.watch([
+			$.paths.dev.data,
+			$.paths.dev.layout,
+			$.paths.dev.styles_part,
+			$.paths.dev.libraries_part,
+			$.paths.dev.scripts_part
+		], $.gulp.series('extentions:dev', 'pug:dev'));
 
 		$.gulp.watch($.paths.dev.scss, $.gulp.series('scss:dev'));
 
