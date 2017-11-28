@@ -1,15 +1,15 @@
 'use strict';
 
 global.$ = {
-	paths: 					require('./gulp/paths.js'),
-	tasks: 					require('./gulp/tasks.js'),
-	gulp: 					require('gulp'),
-	del: 						require('del'),
-	fs: 						require('fs'),
+	paths: 				require('./gulp/paths.js'),
+	tasks: 				require('./gulp/tasks.js'),
+	gulp: 				require('gulp'),
+	del: 				require('del'),
+	fs: 				require('fs'),
 	browserSync: 		require('browser-sync').create(),
-	buffer: 				require('vinyl-buffer'),
-	merge: 					require('merge-stream'),
-	lp: 						require('gulp-load-plugins')()
+	buffer: 			require('vinyl-buffer'),
+	merge: 				require('merge-stream'),
+	lp: 					require('gulp-load-plugins')()
 };
 
 $.tasks.forEach(function(path) {
@@ -17,13 +17,14 @@ $.tasks.forEach(function(path) {
 });
 
 $.gulp.task('dev', $.gulp.series(
-	$.gulp.parallel('clean:before', 'extentions:dev')
+	'clean:before',
 	$.gulp.parallel('fonts', 'favicons', 'content:dev', 'icons', 'png:dev', 'index', 'pug:dev', 'scss:dev', 'js:dev', 'plugins'),
-	$.gulp.parallel('clean:after', 'clear', 'server', 'watch')
+	'clean:after'
+	$.gulp.parallel('server', 'watch')
 ));
 
 $.gulp.task('build', $.gulp.series(
-	$.gulp.parallel('clean:before', 'extentions:build')
+	'clean:before',
 	$.gulp.parallel('fonts', 'favicons', 'content:build', 'icons', 'png:build', 'index', 'pug:build', 'scss:build', 'js:build', 'plugins'),
-	$.gulp.parallel('clean:after', 'clear', 'server')
+	'clean:after'
 ));

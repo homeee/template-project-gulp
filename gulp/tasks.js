@@ -9,6 +9,5 @@ module.exports = [
 	'./gulp/tasks/appearance',
 	'./gulp/tasks/content',
 	'./gulp/tasks/fonts',
-	'./gulp/tasks/favicons',
-	'./gulp/tasks/extentions'
+	'./gulp/tasks/favicons'
 ];

@@ -40,7 +40,7 @@ module.exports = () => {
 			.pipe($.lp.rename({
 				extname: '.png'
 			}))
-			.pipe($.gulp.dest($.paths.dev.appearance.png));
+			.pipe($.gulp.dest($.paths.dev.appearance.folder));
 
 		var spriteData = $.gulp.src($.paths.dev.appearance.png)
 			.pipe($.lp.spritesmith({
@@ -84,7 +84,7 @@ module.exports = () => {
 				.pipe($.lp.rename({
 					extname: '.png'
 			}))
-			.pipe($.gulp.dest($.paths.dev.appearance.png));
+			.pipe($.gulp.dest($.paths.dev.appearance.folder));
 
 		var spriteData = $.gulp.src($.paths.dev.appearance.png)
 			.pipe($.lp.spritesmith({

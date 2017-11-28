@@ -1,6 +1,6 @@
 extends ../../_templates/_layout
 
-block vars
+block page_vars
 	-
 		page = {
 			language: 		'en',
@@ -8,19 +8,16 @@ block vars
 			title: 			'Home Page Title'
 		}
 
-block styles-head
-	p styles-head
+block styles
+	include _styles
 
-block scripts-head
-	p scripts-head
+block scripts
+	include _scripts
 
 block main
 	p main
 	+nav
 	+icon('icon_1','modificator-class')
 
-block plugins
-	p plugins
-
-block scripts-body
-	p scripts-body
+block js
+	include _js

@@ -3,18 +3,14 @@ doctype html
 include ../_helpers/_mixins
 include ../_helpers/_vars
 
-block vars
+block page_vars
 
 html(lang=page.language)
 	head
 		include ../_partials/_head
-		include ../_partials/_favicons
-		include ../_partials/_ie8
-		include ../_partials/_styles_plugins
-		include ../_partials/_tmp/_styles
 
-		block styles-head
-		block scripts-head
+		block styles
+		block scripts
 
 	body(class='page-' + page.name)
 		include ../_partials/_header
@@ -23,9 +19,5 @@ html(lang=page.language)
 		block sidebar
 
 		include ../_partials/_footer
-		include ../_partials/_tmp/_libraries
-		include ../_partials/_plugins
-		block plugins
-		include ../_partials/_tmp/_scripts
 
-		block scripts-body
+		block js
