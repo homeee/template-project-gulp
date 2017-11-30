@@ -54,8 +54,12 @@
 	- `merge-stream` - merge streams
 	- `gulp-flatten` - remove relative path for files
 
-## upgrading ideas (2do)
+## upgrading ideas
 
-* [smartgrid](https://www.npmjs.com/package/smart-grid) - система сеток на flexbox
-* gulp-beml
-
+* [smartgrid](https://www.npmjs.com/package/smart-grid) - flexbox grid system
+* `gulp-beml` - for BEML processing
+~~~html
+<div block="b-animals">
+  <div elem="cat" mod="size:big, color:red"></div>
+</div>
+~~~
