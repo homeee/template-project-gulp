@@ -1,0 +1,25 @@
+.sprite {
+	display: block;
+	overflow: hidden;
+	text-indent: -999px;
+	background-image: url('../img/sprite.png');
+}
+
+.sprite-png_appearance_1 {
+	width: 800px;
+	height: 543px;
+	background-position: 0px 0px;
+}
+
+.sprite-png_appearance_2 {
+	width: 900px;
+	height: 468px;
+	background-position: -802px 0px;
+}
+
+.sprite-svg_appearance {
+	width: 384px;
+	height: 300px;
+	background-position: 0px -545px;
+}
+

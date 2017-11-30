@@ -1,13 +1,22 @@
 module.exports = () => {
 
 	$.gulp.task('watch', () => {
-		$.gulp.watch([
-			$.paths.dev.data.index,
-			$.paths.dev.index
-		], $.gulp.series('index'));
+		$.gulp.watch($.paths.dev.favicons, $.gulp.series('favicons'));
+		$.gulp.watch($.paths.dev.fonts, $.gulp.series('fonts'));
+		$.gulp.watch($.paths.dev.content, $.gulp.series('content:dev'));
 
 		$.gulp.watch([
-			$.paths.dev.data.main,
+			$.paths.dev.icons,
+			$.paths.dev.icons_styles_tpl
+		], $.gulp.series('icons'));
+
+		$.gulp.watch([
+			$.paths.dev.png,
+			$.paths.dev.sprite_styles_tpl
+		], $.gulp.series('png:dev'));
+
+		$.gulp.watch([
+			$.paths.dev.data,
 			$.paths.dev.pug
 		], $.gulp.series('pug:dev'));
 
@@ -17,24 +26,7 @@ module.exports = () => {
 			$.paths.dev.libraries,
 			$.paths.dev.plugins,
 			$.paths.dev.scripts
-		], $.gulp.series('js:dev', 'plugins'));
-
-		$.gulp.watch($.paths.dev.content.all, $.gulp.series('content:dev'));
-
-		$.gulp.watch($.paths.dev.appearance.favicons, $.gulp.series('favicons'));
-
-		$.gulp.watch($.paths.dev.appearance.fonts, $.gulp.series('fonts'));
-
-		$.gulp.watch([
-			$.paths.dev.appearance.svg_icons,
-			$.paths.dev.appearance.svg_sprite_tpl
-		], $.gulp.series('icons'));
-
-		$.gulp.watch([
-			$.paths.dev.appearance.svg_to_png,
-			$.paths.dev.appearance.png,
-			$.paths.dev.appearance.png_sprite_tpl
-		], $.gulp.series('png:dev'));
+		], $.gulp.series('js:dev'));
 	});
 
 };

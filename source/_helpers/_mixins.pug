@@ -1,24 +1,29 @@
+//- +index
+
 mixin index
 	nav
 		ul.index
-			each link, title in index.pages
-				li
-					a(href= link, title= title).item= title
-
-//- +index
-
-mixin nav
-	nav
-		ul.main-nav
-			each link, title in main.navigation
+			each link, title in data.index
 				li
 					a(href= link, title= title).item= title
 
 //- +nav
 
-mixin icon(name, mod)
-	- mod = mod || ''
-	svg(class='svgSprite svgSprite-' + name + ' ' + mod)
-		use(xlink:href='img/sprite.svg#' + name)
+mixin nav
+	nav
+		ul.main-nav
+			each link, title in data.common.navigation
+				li
+					a(href= link, title= title).item= title
 
 //- +icon('imgName','modificator-class')
+
+mixin icon(name, mod)
+	- mod = mod || ''
+	svg(class='icon icon-' + name + ' ' + mod)
+		use(xlink:href='img/icons.svg#' + name)
+
+//- +sprite('imgName')
+
+mixin sprite(name)
+	span(class='sprite sprite-' + name)

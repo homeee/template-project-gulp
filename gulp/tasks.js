@@ -7,7 +7,6 @@ module.exports = [
 	'./gulp/tasks/scss',
 	'./gulp/tasks/js',
 	'./gulp/tasks/appearance',
-	'./gulp/tasks/content',
-	'./gulp/tasks/fonts',
-	'./gulp/tasks/favicons'
+	'./gulp/tasks/other'
+
 ];

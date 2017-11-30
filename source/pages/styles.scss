@@ -3,34 +3,27 @@
 @import '../_helpers/_vars';
 @import '../_helpers/_mixins';
 
-/**
- * reset
- */
+// reset
 
 @import '../_helpers/_reset';
 
-/**
- * base
- */
+// base
 
 @import '../_helpers/_base';
 
-/**
- * fonts
- */
+// fonts
 
 @import '../_helpers/_fonts';
 
-/**
- * sprites
- */
+// icons
 
-@import '../_helpers/_svg_sprite';
-@import '../_helpers/_png_sprite';
+@import '../_helpers/_icons';
 
-/**
- * common
- */
+// sprite
+
+@import '../_helpers/_sprite';
+
+// common
 
 body,
 input,
@@ -45,9 +38,7 @@ a {
 	color: $link-color;
 }
 
-/**
- * start
- */
+// start
 
 .container {
 	margin: 0 auto;
@@ -59,32 +50,22 @@ a {
 	display: flex;
 }
 
-/**
- * header
- */
+// header
 
 @import '../_partials/_header.scss';
 
-/**
- * footer
- */
+// footer
 
 @import '../_partials/_footer.scss';
 
-/**
- * nav
- */
+// nav
 
 @import '../_partials/_nav.scss';
 
-/**
- * buttons
- */
+// buttons
 
 @import '../_partials/_buttons.scss';
 
-/**
- * pages
- */
+// pages
 
 @import './home/_styles.scss';

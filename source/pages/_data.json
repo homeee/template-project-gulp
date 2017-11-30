@@ -1,0 +1,15 @@
+{
+	"index": {
+		"Home": "home.html"
+	},
+	"common": {
+		"navigation": {
+			"Home": "home.html"
+		}
+	},
+	"pages": {
+		"home": {
+			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis fugiat temporibus sint suscipit illum odit quas fugit nihil maxime pariatur enim reprehenderit, earum, magni odio atque, a consequuntur quae ab!"
+		}
+	}
+}

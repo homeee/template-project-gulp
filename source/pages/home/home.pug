@@ -9,15 +9,31 @@ block page_vars
 		}
 
 block styles
-	include _styles
+	//- link(rel='stylesheet' href='./js/plugins/{pluginName}/{pluginName}.{ext}')
+	link(rel='stylesheet' href='./css/styles.css')
 
 block scripts
-	include _scripts
-
-block main
-	p main
-	+nav
-	+icon('icon_1','modificator-class')
+	script.
+		(() => {
+			console.log('head scripts');
+		})()
 
 block js
-	include _js
+	script(src='./js/libraries/libraries.js')
+	//- script(src='./js/plugins/{pluginName}/{pluginName}.{ext}')
+	script(src='./js/scripts.js')
+	script.
+		$(document).ready(()=> {
+			console.log('body init plugins');
+		});
+
+block main
+	h3 main
+	+icon('icon_1','modificator-class')
+	+sprite('png_appearance_1','modificator-class')
+
+block sidebar
+	h3 sidebar
+	+nav
+	each text in data.pages.home.content
+		p= text

@@ -19,13 +19,6 @@
 * `bower i`
 * `gulp`
 
-## libraries & plugins
-
-* `reset.css` - css-styles reset
-* `jquery` - javascript library
-* `svg4everybody` - external SVG spritemaps support
-* `bx-slider` - responsive slider
-
 ## packages
 
 * main
@@ -51,7 +44,6 @@
 * svg
 	- `gulp-svgmin` - minify
 	- `gulp-svg-sprite` - sprite creating
-	- `gulp-raster` - rasterization
 * img
 	- `gulp.spritesmith` - sprite creating
 	- `gulp-tinypng` - minify (using tinypng.com)

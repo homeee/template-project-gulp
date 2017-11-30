@@ -11,7 +11,8 @@ module.exports = () => {
 				browsers: ['last 3 version']
 			}))
 			.pipe($.lp.rename('styles.css'))
-			.pipe($.gulp.dest($.paths.build.styles));
+			.pipe($.gulp.dest($.paths.build.styles))
+			.on('end', $.browserSync.reload);
 	});
 
 	$.gulp.task('scss:build', () => {

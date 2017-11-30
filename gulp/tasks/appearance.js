@@ -1,52 +1,43 @@
 module.exports = () => {
 
 	$.gulp.task('icons', () => {
-		return $.gulp.src($.paths.dev.appearance.svg_icons)
+		return $.gulp.src($.paths.dev.icons)
 			.pipe($.lp.svgmin({
-				js2svg: {
-					pretty: true
-				}
+				js2svg: {pretty: true}
 			}))
 			.pipe($.lp.cheerio({
 				run: function($) {
-					$('[fill]').removeAttr('fill'); // Отключаем, для мультицветовых изображений
+					// $('[fill]').removeAttr('fill');
 					$('[stroke]').removeAttr('stroke');
 					$('[style]').removeAttr('style');
 				},
-				parserOptions: {
-					xmlMode: true
-				}
+				parserOptions: {xmlMode: true}
 			}))
 			.pipe($.lp.replace('&gt;', '>'))
 			.pipe($.lp.svgSprite({
 				mode: {
 					symbol: {
-						sprite: $.paths.dev.appearance.svg_sprite,
+						sprite: $.paths.dev.icons_img,
 						render: {
 							scss: {
-								dest: $.paths.dev.appearance.svg_sprite_dest,
-								template: $.paths.dev.appearance.svg_sprite_tpl
+								template: $.paths.dev.icons_styles_tpl,
+								dest: $.paths.dev.icons_styles_dest
 							}
 						}
 					}
 				}
 			}))
-			.pipe($.gulp.dest($.paths.build.images));
+			.pipe($.gulp.dest($.paths.build.images))
+			.on('end', $.browserSync.reload);
 	});
 
 	$.gulp.task('png:dev', () => {
-		var convertSvg = $.gulp.src($.paths.dev.appearance.svg_to_png)
-			.pipe($.lp.raster())
-			.pipe($.lp.rename({
-				extname: '.png'
-			}))
-			.pipe($.gulp.dest($.paths.dev.appearance.folder));
-
-		var spriteData = $.gulp.src($.paths.dev.appearance.png)
+		var spriteData = $.gulp.src($.paths.dev.png)
 			.pipe($.lp.spritesmith({
-				imgName: $.paths.dev.appearance.png_sprite,
-				cssName: $.paths.dev.appearance.png_sprite_dest,
-				cssTemplate: $.paths.dev.appearance.png_sprite_tpl
+				imgName: $.paths.dev.sprite_img,
+				cssName: $.paths.dev.sprite_styles_name,
+				cssTemplate: $.paths.dev.sprite_styles_tpl,
+				padding: 2
 			}));
 
 		var imgStream = spriteData.img
@@ -54,43 +45,17 @@ module.exports = () => {
 			.pipe($.gulp.dest($.paths.build.images));
 
 		var cssStream = spriteData.css
-			.pipe($.lp.autoprefixer({
-				browsers: ['last 3 version']
-			}))
-			.pipe($.gulp.dest($.paths.build.styles));
+			.pipe($.gulp.dest($.paths.dev.sprite_styles_dest));
 
 		return $.merge(convertSvg, imgStream, cssStream);
 	});
 
 	$.gulp.task('png:build', () => {
-		var convertSvg = $.gulp.src($.paths.dev.appearance.svg_to_png)
-			.pipe($.lp.svgmin({
-					js2svg: {
-						pretty: true
-					}
-				}))
-				.pipe($.lp.cheerio({
-					run: function($) {
-						// $('[fill]').removeAttr('fill'); // Отключаем, для мультицветовых изображений
-						$('[stroke]').removeAttr('stroke');
-						$('[style]').removeAttr('style');
-					},
-					parserOptions: {
-						xmlMode: true
-					}
-				}))
-			.pipe($.lp.replace('&gt;', '>'))
-			.pipe($.lp.raster())
-				.pipe($.lp.rename({
-					extname: '.png'
-			}))
-			.pipe($.gulp.dest($.paths.dev.appearance.folder));
-
-		var spriteData = $.gulp.src($.paths.dev.appearance.png)
+		var spriteData = $.gulp.src($.paths.dev.png)
 			.pipe($.lp.spritesmith({
-				imgName: $.paths.dev.appearance.png_sprite,
-				cssName: $.paths.dev.appearance.png_sprite_dest,
-				cssTemplate: $.paths.dev.appearance.png_sprite_tpl
+				imgName: $.paths.dev.png_sprite,
+				cssName: $.paths.dev.png_sprite_dest,
+				cssTemplate: $.paths.dev.png_sprite_tpl
 			}));
 
 		var imgStream = spriteData.img
@@ -99,12 +64,9 @@ module.exports = () => {
 			.pipe($.gulp.dest($.paths.build.images));
 
 		var cssStream = spriteData.css
-			.pipe($.lp.autoprefixer({
-				browsers: ['last 3 version']
-			}))
 			.pipe($.lp.csscomb())
 			.pipe($.lp.cleanCss())
-			.pipe($.gulp.dest($.paths.build.styles));
+			.pipe($.gulp.dest($.paths.dev.sprite_styles_dest));
 
 		return $.merge(convertSvg, imgStream, cssStream);
 	});
