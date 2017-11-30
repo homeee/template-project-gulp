@@ -4,27 +4,21 @@
 @import '../_helpers/_mixins';
 
 /* reset */
-
 @import '../_helpers/_reset';
 
 /* base */
-
 @import '../_helpers/_base';
 
 /* fonts */
-
 @import '../_helpers/_fonts';
 
 /* icons */
-
 @import '../_helpers/_icons';
 
 /* sprite */
-
 @import '../_helpers/_sprite';
 
 /* common */
-
 body,
 input,
 textarea,
@@ -45,21 +39,22 @@ a {
 }
 
 /* header */
-
 @import '../_partials/_header.scss';
 
 /* footer */
-
 @import '../_partials/_footer.scss';
 
 /* nav */
-
 @import '../_partials/_nav.scss';
 
 /* buttons */
-
 @import '../_partials/_buttons.scss';
 
 /* pages */
-
-@import './home/_styles.scss';
+@media only screen and (min-width: ) { /* 'only' для старых ie */
+	/* body::after {content: 'равно или больше px';} // Отладка */
+}
+/* При mobile-first используем min-width (+1px), при обратном подходе max-width, разницы нет */
+/* Для адаптива ширину внутренних блоков нужно задавать в % */
+/* Чтобы блоки не отталкивались от родительских элементов, последним указывают отрицательные margin */
+/* Горизонтальные margin не схлопываются в отличае от вертикальных */

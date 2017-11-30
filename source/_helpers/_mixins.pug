@@ -16,14 +16,14 @@ mixin nav
 				li
 					a(href= link, title= title)= title
 
-//- +icon('imgName','modificator-class')
+//- +icon('imgName','modificator')
 
 mixin icon(name, mod)
 	- mod = mod || ''
 	svg(class='icon icon-' + name + ' ' + mod)
 		use(xlink:href='img/icons.svg#' + name)
 
-//- +sprite('imgName')
+//- +sprite('imgName','modificator')
 
 mixin sprite(name, mod)
 	- mod = mod || ''

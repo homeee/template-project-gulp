@@ -2,7 +2,7 @@ module.exports = {
 
 	dev: {
 		data: 					'./source/pages/_data.json',
-		pages: 					'./source/pages/**/*.pug',
+		pages: 					'./source/pages/*.pug',
 		pug: 					'./source/**/*.pug',
 
 		styles: 				'./source/pages/styles.scss',

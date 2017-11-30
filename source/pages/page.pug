@@ -1,10 +1,10 @@
-extends ../../_templates/_layout
+extends ../_templates/_layout
 
 block page_vars
 	-
 		page = {
-			name: 			'home',
-			title: 			'Home Page Title'
+			name: 		'page.pug',
+			title: 		'Page Title'
 		}
 
 block styles
@@ -14,23 +14,24 @@ block styles
 block scripts
 	script.
 		(() => {
-			console.log('head scripts');
-		})()
+			// head scripts
+		})();
 
 block js
 	script(src='./js/libraries/libraries.js')
 	//- script(src='./js/plugins/{pluginName}/{pluginName}.{ext}')
 	script(src='./js/scripts.js')
 	script.
-		$(document).ready(()=> {
-			console.log('body init plugins');
-		});
+		(() => {
+			// body init plugins
+			svg4everybody();
+		})();
 
 block main
 	h3 main
-	+icon('icon_1','modificator-class')
+	+icon('icon_1','modificator')
 	+sprite('img_1')
-	p= json.pages.home.content
+	p= json.pages.page.content
 
 block sidebar
 	h3 sidebar
