@@ -25,5 +25,6 @@ mixin icon(name, mod)
 
 //- +sprite('imgName')
 
-mixin sprite(name)
-	span(class='sprite sprite-' + name)
+mixin sprite(name, mod)
+	- mod = mod || ''
+	span(class='sprite sprite-' + name + ' ' + mod)

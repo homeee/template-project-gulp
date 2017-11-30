@@ -3,27 +3,27 @@
 @import '../_helpers/_vars';
 @import '../_helpers/_mixins';
 
-// reset
+/* reset */
 
 @import '../_helpers/_reset';
 
-// base
+/* base */
 
 @import '../_helpers/_base';
 
-// fonts
+/* fonts */
 
 @import '../_helpers/_fonts';
 
-// icons
+/* icons */
 
 @import '../_helpers/_icons';
 
-// sprite
+/* sprite */
 
 @import '../_helpers/_sprite';
 
-// common
+/* common */
 
 body,
 input,
@@ -44,22 +44,22 @@ a {
 	max-width: 960px;
 }
 
-// header
+/* header */
 
 @import '../_partials/_header.scss';
 
-// footer
+/* footer */
 
 @import '../_partials/_footer.scss';
 
-// nav
+/* nav */
 
 @import '../_partials/_nav.scss';
 
-// buttons
+/* buttons */
 
 @import '../_partials/_buttons.scss';
 
-// pages
+/* pages */
 
 @import './home/_styles.scss';
