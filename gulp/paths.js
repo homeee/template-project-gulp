@@ -8,11 +8,7 @@ module.exports = {
 		styles: 				'./source/pages/styles.scss',
 		scss: 					[
 									'./source/**/*.scss',
-									// '!./source/{_helpers,_templates}/{_icons,_sprite}.scss'
-									'!source/_templates/_sprite.scss',
-									'!source/_templates/_icons.scss',
-									'!source/_helpers/_sprite.scss',
-									'!source/_helpers/_icons.scss'
+									'!source/{_helpers,_templates}/{_icons,_sprite}.scss'
 								],
 
 		libraries: 				require('./libraries.js'),
