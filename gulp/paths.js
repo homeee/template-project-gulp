@@ -1,31 +1,29 @@
 module.exports = {
 
 	dev: {
-		dir: 				'./source',
+		data: 					'./source/pages/_data.json',
+		pages: 					'./source/pages/**/*.pug',
+		pug: 					'./source/**/*.pug',
 
-		data: 				'./source/pages/_data.json',
-		pug: 				'./source/**/*.pug',
+		styles: 				'./source/pages/styles.scss',
+		scss: 					[
+									'./source/**/*.scss',
+									'!./source/{_helpers,_templates}/{_icons,_sprite}.scss'
+								],
 
-		styles: 			'./source/pages/styles.scss',
-		scss: 				[
-								'./source/**/*.scss',
-								'!./source/_templates/_icons.scss',
-								'!./source/_templates/_sprite.scss',
-							],
+		libraries: 				require('./libraries.js'),
+		plugins: 				require('./plugins.js'),
+		scripts: 				'./source/scripts/*.js',
 
-		libraries: 			require('./libraries.js'),
-		plugins: 			require('./plugins.js'),
-		scripts: 			'./source/scripts/*.js',
-
-		favicons: 			'./source/media/favicons/*.{ico,png}',
-		fonts: 				'./source/media/fonts/**/*.{woff2,woff}',
-		content: 			'./source/media/content/*.{jpeg,jpg,png,svg,gif,bmp}',
+		favicons: 				'./source/media/favicons/*.{ico,png}',
+		fonts: 					'./source/media/fonts/**/*.{woff2,woff}',
+		content: 				'./source/media/content/*.{jpeg,jpg,png,svg,gif,bmp}',
 
 		icons: 					'./source/media/appearance/icons/*.svg',
 		icons_styles_tpl: 		'./source/_templates/_icons.scss',
 		// relative to $.paths.build.images + '/symbol'
-			icons_img: 				'../icons.svg',
-			icons_styles_dest: 		'../../../source/_helpers/_icons.scss',
+		icons_img: 				'../icons.svg',
+		icons_styles_dest: 		'../../../source/_helpers/_icons.scss',
 
 		png: 					'./source/media/appearance/*.png',
 		sprite_styles_tpl: 		'./source/_templates/_sprite.scss',

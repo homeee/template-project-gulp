@@ -18,9 +18,8 @@ $.tasks.forEach(function(path) {
 
 $.gulp.task('default', $.gulp.series(
 	'clean:before',
-	$.gulp.parallel('favicons', 'fonts', 'content:dev'),
-	$.gulp.parallel('icons', 'png:dev'),
-	$.gulp.parallel('index', 'pug:dev', 'scss:dev', 'js:dev'),
+	$.gulp.parallel('favicons', 'fonts', 'content:dev', 'icons', 'png:dev'),
+	$.gulp.parallel('pug:dev', 'scss:dev', 'js:dev'),
 	'clean:after',
 	$.gulp.parallel('server', 'watch')
 ));

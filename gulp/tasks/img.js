@@ -47,7 +47,7 @@ module.exports = () => {
 		var cssStream = spriteData.css
 			.pipe($.gulp.dest($.paths.dev.sprite_styles_dest));
 
-		return $.merge(convertSvg, imgStream, cssStream);
+		return $.merge(imgStream, cssStream);
 	});
 
 	$.gulp.task('png:build', () => {
@@ -68,7 +68,7 @@ module.exports = () => {
 			.pipe($.lp.cleanCss())
 			.pipe($.gulp.dest($.paths.dev.sprite_styles_dest));
 
-		return $.merge(convertSvg, imgStream, cssStream);
+		return $.merge(imgStream, cssStream);
 	});
 
 };

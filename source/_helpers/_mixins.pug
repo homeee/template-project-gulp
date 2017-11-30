@@ -3,18 +3,18 @@
 mixin index
 	nav
 		ul.index
-			each link, title in data.index
+			each link, title in json.index
 				li
-					a(href= link, title= title).item= title
+					a(href= link, title= title)= title
 
 //- +nav
 
 mixin nav
 	nav
 		ul.main-nav
-			each link, title in data.common.navigation
+			each link, title in json.common.navigation
 				li
-					a(href= link, title= title).item= title
+					a(href= link, title= title)= title
 
 //- +icon('imgName','modificator-class')
 

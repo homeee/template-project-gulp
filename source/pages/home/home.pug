@@ -3,7 +3,6 @@ extends ../../_templates/_layout
 block page_vars
 	-
 		page = {
-			language: 		'en',
 			name: 			'home',
 			title: 			'Home Page Title'
 		}
@@ -30,10 +29,9 @@ block js
 block main
 	h3 main
 	+icon('icon_1','modificator-class')
-	+sprite('png_appearance_1','modificator-class')
+	+sprite('img_1')
+	p= json.pages.home.content
 
 block sidebar
 	h3 sidebar
 	+nav
-	each text in data.pages.home.content
-		p= text
