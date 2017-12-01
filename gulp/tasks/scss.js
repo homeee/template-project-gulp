@@ -1,7 +1,7 @@
 module.exports = () => {
 
 	$.gulp.task('scss:dev', () => {
-		return $.gulp.src($.paths.dev.styles)
+		return $.gulp.src($.dev.styles)
 			.pipe($.lp.sourcemaps.init())
 				.pipe($.lp.sass({
 					outputStyle: 'expanded'
@@ -11,12 +11,12 @@ module.exports = () => {
 				browsers: ['last 3 version']
 			}))
 			.pipe($.lp.rename('styles.css'))
-			.pipe($.gulp.dest($.paths.build.styles))
+			.pipe($.gulp.dest($.build.styles))
 			.on('end', $.browserSync.reload);
 	});
 
 	$.gulp.task('scss:build', () => {
-		return $.gulp.src($.paths.dev.styles)
+		return $.gulp.src($.dev.styles)
 			.pipe($.lp.sass({
 				outputStyle: 'compressed'
 			}))
@@ -26,7 +26,7 @@ module.exports = () => {
 			.pipe($.lp.csscomb())
 			.pipe($.lp.cleanCss())
 			.pipe($.lp.rename('styles.min.css'))
-			.pipe($.gulp.dest($.paths.build.styles))
+			.pipe($.gulp.dest($.build.styles))
 	});
 
 };
