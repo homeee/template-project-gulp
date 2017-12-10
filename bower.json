@@ -1,7 +1,0 @@
-{
-	"name": "template-gulp",
-	"dependencies": {
-		"jquery": "^3.2.1",
-		"svg4everybody": "^2.1.9"
-	}
-}
