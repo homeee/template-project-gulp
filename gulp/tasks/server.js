@@ -6,10 +6,10 @@ module.exports = () => {
 			open: true,
 			reloadOnRestart: true,
 			server: {
-				baseDir: $.build.dir
+				baseDir: $.paths.build.dir
 			},
-			port: 8080,
-		});
+			port: 8080
+		})
 	});
 
 };

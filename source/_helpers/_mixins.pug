@@ -1,30 +1,26 @@
-//- +index
+//- pages links
 
-mixin index
-	nav
-		ul.index
-			each link, title in json.index
-				li
-					a(href= link, title= title)= title
+mixin index(data)
+	ul
+		each val, key in data
+			li
+				a(href=val)= key
 
-//- +nav
+//- content images
 
-mixin nav
-	nav
-		ul.main-nav
-			each link, title in json.common.navigation
-				li
-					a(href= link, title= title)= title
+mixin img(fileName, width, height, className)
+	- width = width || 'auto'
+	- height = height || 'auto'
+	- className = className || ''
+	img(class=className, src='img/content/' + fileName, style='width: ' + width + '; height: ' + height + ';')
 
-//- +icon('imgName','modificator')
+//- sprites
 
-mixin icon(name, mod)
+mixin icon(fileName, mod)
 	- mod = mod || ''
-	svg(class='icon icon-' + name + ' ' + mod)
-		use(xlink:href='img/icons.svg#' + name)
+	svg(class='icon icon-' + fileName + ' ' + mod)
+		use(xlink:href='img/icons.svg#' + fileName)
 
-//- +sprite('imgName','modificator')
-
-mixin sprite(name, mod)
+mixin sprite(fileName, mod)
 	- mod = mod || ''
-	span(class='sprite sprite-' + name + ' ' + mod)
+	span(class='sprite sprite-' + fileName + ' ' + mod)

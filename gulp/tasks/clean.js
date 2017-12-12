@@ -1,11 +1,11 @@
 module.exports = () => {
 
 	$.gulp.task('clean:before', () => {
-		return $.del($.build.dir);
+		return $.del($.paths.build.dir);
 	});
 
 	$.gulp.task('clean:after', () => {
-		return $.del($.build.tinypng_tmp);
+		return $.del($.paths.build.tinypng_tmp);
 	});
 
 };

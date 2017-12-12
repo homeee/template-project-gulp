@@ -1,5 +1,3 @@
-//- common container
-
 doctype html
 
 include ../_helpers/_mixins
@@ -15,13 +13,6 @@ html(lang=json.language)
 		block scripts
 
 	body(class='page-' + page.name)
-		.container
-			include ../_partials/_header
-
-			.body
-				block main
-				block sidebar
-
-			include ../_partials/_footer
+		block container
 
 		block js

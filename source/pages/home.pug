@@ -1,11 +1,15 @@
 extends ../_templates/_layout
 
+//- page vars
+
 block page_vars
 	-
 		page = {
-			name: 		'page.pug',
-			title: 		'Page Title'
+			name: 		'home',
+			title: 		'Home Page Title'
 		}
+
+//- styles & scripts
 
 block styles
 	//- link(rel='stylesheet' href='./js/plugins/{pluginName}/{pluginName}.{ext}')
@@ -14,25 +18,25 @@ block styles
 block scripts
 	script.
 		(() => {
-			// head scripts
+			//- head scripts
 		})();
 
 block js
 	script(src='./js/libraries/libraries.js')
 	//- script(src='./js/plugins/{pluginName}/{pluginName}.{ext}')
-	script(src='./js/scripts.js')
+	//- script(src='./js/scripts.js')
 	script.
 		(() => {
-			// body init plugins
+			//- body init plugins
 			svg4everybody();
 		})();
 
+//- content
+
 block main
-	h3 main
-	+icon('icon_1','modificator')
-	+sprite('img_1')
-	p= json.pages.page.content
+	main
+		p main
 
 block sidebar
-	h3 sidebar
-	+nav
+	aside.sidebar
+		p sidebar

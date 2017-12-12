@@ -1,17 +1,8 @@
 {
+	"language": "en",
+	"projectName": "projectName",
 	"index": {
-		"Page": "page.html"
+		"Home": "home.html"
 	},
-	"common": {
-		"language": "en",
-		"navigation": {
-			"About": "about.html",
-			"Contact": "contact.html"
-		}
-	},
-	"pages": {
-		"page": {
-			"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis fugiat temporibus sint suscipit illum odit quas fugit nihil maxime pariatur enim reprehenderit, earum, magni odio atque, a consequuntur quae ab!"
-		}
-	}
+	"lorem": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, aliquid, alias. Hic blanditiis illum, odio unde? Illum, repudiandae, quo nostrum rem in atque, alias blanditiis obcaecati aspernatur veritatis dolor sed inventore? Est facere vel doloribus voluptatum at aspernatur consequuntur non quisquam, inventore ab molestias odit, nesciunt eligendi ex ullam debitis!"
 }
