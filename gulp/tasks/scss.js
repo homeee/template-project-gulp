@@ -1,10 +1,5 @@
 module.exports = () => {
 
-	$.gulp.task('smartgrid', (cb) => {
-		$.smartgrid($.paths.dev.helpers, $.settings.smartgrid);
-		cb();
-	});
-
 	$.gulp.task('scss:dev', () => {
 		return $.gulp.src($.paths.dev.styles)
 			.pipe($.lp.sourcemaps.init())

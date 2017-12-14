@@ -14,13 +14,15 @@ mixin img(fileName, width, height, className)
 	- className = className || ''
 	img(class=className, src='img/content/' + fileName, style='width: ' + width + '; height: ' + height + ';')
 
-//- sprites
+//- icon
 
 mixin icon(fileName, mod)
 	- mod = mod || ''
 	svg(class='icon icon-' + fileName + ' ' + mod)
 		use(xlink:href='img/icons.svg#' + fileName)
 
+//- sprite
+
 mixin sprite(fileName, mod)
 	- mod = mod || ''
-	span(class='sprite sprite-' + fileName + ' ' + mod)
+	div(class='sprite-' + fileName + ' ' + mod)

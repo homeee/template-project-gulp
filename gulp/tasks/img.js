@@ -17,13 +17,7 @@ module.exports = () => {
 			.pipe($.lp.svgSprite({
 				mode: {
 					symbol: {
-						sprite: $.paths.dev.icons_name,
-						render: {
-							scss: {
-								template: $.paths.dev.icons_scss_tpl,
-								dest: $.paths.dev.icons_scss_dest
-							}
-						}
+						sprite: $.paths.dev.icons_name
 					}
 				}
 			}))
@@ -37,11 +31,16 @@ module.exports = () => {
 
 		var spriteData = $.gulp.src($.paths.dev.raster)
 			.pipe($.lp.spritesmith({
+				retinaSrcFilter: $.paths.dev.raster2x_filter,
 				imgName: $.paths.dev.sprite_name,
+				retinaImgName: $.paths.dev.sprite2x_name,
 				cssName: $.paths.dev.sprite_scss_name,
-				cssTemplate: $.paths.dev.sprite_scss_tpl,
-				padding: 2,
-				algorithm: 'binary-tree'
+				cssOpts: {
+					cssSelector: function (sprite) {
+						return '.sprite-' + sprite.name;
+					}
+				},
+				padding: 2
 			}));
 
 		var imgStream = spriteData.img
@@ -49,7 +48,7 @@ module.exports = () => {
 			.pipe($.gulp.dest($.paths.build.images));
 
 		var cssStream = spriteData.css
-			.pipe($.gulp.dest($.paths.dev.partials));
+			.pipe($.gulp.dest($.paths.dev.helpers));
 
 		return $.merge(bg, imgStream, cssStream)
 			.on('end', $.browserSync.reload);
@@ -62,11 +61,16 @@ module.exports = () => {
 
 		var spriteData = $.gulp.src($.paths.dev.raster)
 			.pipe($.lp.spritesmith({
+				retinaSrcFilter: $.paths.dev.raster2x_filter,
 				imgName: $.paths.dev.sprite_name,
+				retinaImgName: $.paths.dev.sprite2x_name,
 				cssName: $.paths.dev.sprite_scss_name,
-				cssTemplate: $.paths.dev.sprite_scss_tpl,
-				padding: 2,
-				algorithm: 'binary-tree'
+				cssOpts: {
+					cssSelector: function (sprite) {
+						return '.sprite-' + sprite.name;
+					}
+				},
+				padding: 2
 			}));
 
 		var imgStream = spriteData.img
@@ -77,7 +81,7 @@ module.exports = () => {
 		var cssStream = spriteData.css
 			.pipe($.lp.csscomb())
 			.pipe($.lp.cleanCss())
-			.pipe($.gulp.dest($.paths.dev.partials));
+			.pipe($.gulp.dest($.paths.dev.helpers));
 
 		return $.merge(bg, imgStream, cssStream);
 	});

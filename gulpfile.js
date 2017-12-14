@@ -32,15 +32,12 @@ $.gulp.task('watch', () => {
 		$.paths.dev.content_raster
 	], $.gulp.series('content:dev'));
 
-	$.gulp.watch([
-		$.paths.dev.vector,
-		$.paths.dev.icons_scss_tpl
-	], $.gulp.series('vector', 'scss:dev'));
+	$.gulp.watch($.paths.dev.vector, $.gulp.series('vector', 'scss:dev'));
 
 	$.gulp.watch([
 		$.paths.dev.raster,
-		$.paths.dev.bg,
-		$.paths.dev.sprite_scss_tpl
+		$.paths.dev.sprite_scss_tpl,
+		$.paths.dev.bg
 	], $.gulp.series('raster:dev', 'scss:dev'));
 
 	$.gulp.watch([
@@ -61,7 +58,8 @@ $.gulp.task('watch', () => {
 
 $.gulp.task('dev', $.gulp.series(
 	'clean:before',
-	$.gulp.parallel('favicons', 'fonts', 'content:dev', 'vector', 'raster:dev', 'smartgrid'),
+	// 'smartgrid'
+	$.gulp.parallel('favicons', 'fonts', 'content:dev', 'vector', 'raster:dev'),
 	$.gulp.parallel('pug:dev', 'scss:dev', 'js:dev'),
 	'clean:after',
 	$.gulp.parallel('server', 'watch')
@@ -69,7 +67,8 @@ $.gulp.task('dev', $.gulp.series(
 
 $.gulp.task('build', $.gulp.series(
 	'clean:before',
-	$.gulp.parallel('favicons', 'fonts', 'content:build', 'vector', 'raster:build', 'smartgrid'),
+	// 'smartgrid'
+	$.gulp.parallel('favicons', 'fonts', 'content:build', 'vector', 'raster:build'),
 	$.gulp.parallel('pug:build', 'scss:build', 'js:build'),
 	'clean:after'
 ));

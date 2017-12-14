@@ -10,7 +10,7 @@
 * _pug_ - html-preprocessor & template engine
 * _scss_ - css-preprocessor
 * data - json
-* sprites - svg/png
+* sprites - svg / png (retina including)
 * smartgrid - flexbox grid system
 * sticky footer on flexbox
 * index page
@@ -39,12 +39,12 @@ _templates_
 
 * `./_templates/_layout.pug` - page template
 * `./_templates/_iframe.pug` - iframe template
-* `./_templates/_icons.scss` - svg sprite template
-* `./_templates/_sprite.scss` - png sprite template
+* `./_templates/_test.pug` - test template
+* `./_templates/_scss_retina.template.handlebars` - png sprite template
 
 _media_
 
-* `./media/appearance/*.png` - png sprite source
+* `./media/appearance/*.png` - png sprite source (*@2x including)
 * `./media/appearance/svg/*.svg` - svg sprite source
 * `./media/appearance/bg/*` - background images
 * `./media/content/*` - content pictures
@@ -56,6 +56,7 @@ _pages_
 * `./pages/_data.json` - data for index.pug & pages
 * `./pages/styles.scss` - main styles file
 * `./pages/home.pug` - page layout
+* `./pages/test.pug` - test layout
 
 _scripts_
 
@@ -66,19 +67,26 @@ _scripts_
 _svg sprite_
 
 ~~~pug
-+icon(fileName, mod) // pug mixin
++icon('{filename}', 'mod')
 ~~~
 
 _png sprite_
 
 ~~~pug
-+sprite(fileName, mod) // pug mixin
++sprite('{filename}', 'mod')
+~~~
+
+~~~scss
+.sprite-{filename} {
+	@include sprite(${filename}) // for simple sprite
+	@include retina-sprite(${filename}-group) // for simple & retina sprite
+}
 ~~~
 
 _inline png/svg image_
 
 ~~~pug
-+img(fileName, width, height, className) // pug mixin
++img('{fileName}', {width}, {height}, '{className}')
 ~~~
 
 _beml_
