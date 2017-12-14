@@ -1,16 +1,16 @@
 {
-	"name": "template-gulp",
+	"name": "template-project-gulp",
 	"description": "",
 	"version": "1.0.0",
 	"author": "Latushko Igor <latushko.igor@gmail.com>",
-	"homepage": "https://github.com/latushko-igor/template-gulp",
+	"homepage": "https://github.com/latushko-igor/template-project-gulp",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/latushko-igor/template-gulp.git"
+		"url": "git+https://github.com/latushko-igor/template-project-gulp.git"
 	},
 	"bugs": {
-		"url": "https://github.com/latushko-igor/template-gulp/issues"
+		"url": "https://github.com/latushko-igor/template-project-gulp/issues"
 	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"

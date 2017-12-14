@@ -30,7 +30,7 @@ module.exports = {
 			sprite_name: 			'../img/sprite.png',
 			sprite2x_name: 			'../img/sprite@2x.png',
 		sprite_scss_name: 		'_sprite.scss',
-		sprite_scss_tpl: 		'./source/_templates/_scss_retina.template.handlebars',
+		sprite_scss_tpl: 		'./source/_templates/_sprite.handlebars',
 
 		bg: 					'./source/media/appearance/bg/*.{jpeg,jpg,png}'
 	},

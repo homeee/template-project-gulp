@@ -1,5 +1,5 @@
 
-# template-gulp
+# template-project-gulp
 
 [TOC]
 
@@ -11,14 +11,17 @@
 * _scss_ - css-preprocessor
 * data - json
 * sprites - svg / png (retina including)
-* smartgrid - flexbox grid system
 * sticky footer on flexbox
-* index page
+* index page - pages links
+* test page layout
 * deploying in github pages
+* flexbox grid system
+	- smartgrid
+	- bootstrap
 
 ## install
 
-* `git clone https://github.com/latushko-igor/template-gulp.git`
+* `git clone https://github.com/latushko-igor/template-project-gulp.git`
 * `npm i`
 * `bower i`
 * `gulp`
@@ -40,7 +43,7 @@ _templates_
 * `./_templates/_layout.pug` - page template
 * `./_templates/_iframe.pug` - iframe template
 * `./_templates/_test.pug` - test template
-* `./_templates/_scss_retina.template.handlebars` - png sprite template
+* `./_templates/_sprite.handlebars` - png sprite template
 
 _media_
 
@@ -53,7 +56,7 @@ _media_
 
 _pages_
 
-* `./pages/_data.json` - data for index.pug & pages
+* `./pages/_data.json` - data for index page & project pages
 * `./pages/styles.scss` - main styles file
 * `./pages/home.pug` - page layout
 * `./pages/test.pug` - test layout
