@@ -54,8 +54,8 @@ _templates_
 
 _media_
 
-* `./media/appearance/*.png` - png sprite source (*@2x including)
 * `./media/appearance/svg/*.svg` - svg sprite source
+* `./media/appearance/*.png` - png sprite source (*@2x including)
 * `./media/appearance/bg/*` - background images
 * `./media/content/*` - content pictures
 * `./media/favicons/*` - favicons
