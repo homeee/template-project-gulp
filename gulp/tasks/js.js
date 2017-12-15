@@ -17,7 +17,7 @@ module.exports = () => {
 			.pipe($.gulp.dest($.paths.build.vendor));
 
 		var scripts = $.gulp.src($.paths.dev.scripts)
-			.pipe($.lp.concat('scripts.min.js'))
+			.pipe($.lp.concat('scripts.js'))
 			.pipe($.lp.uglifyes())
 			.pipe($.gulp.dest($.paths.build.scripts));
 

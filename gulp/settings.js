@@ -4,11 +4,11 @@ module.exports = {
 	deployRepo: 'https://github.com/latushko-igor/latushko-igor.github.io.git',
 
 	vendor: [
-		'./node_modules/jquery/**/*',
 		'./node_modules/svg4everybody/**/*',
-		'./node_modules/bootstrap/**/*',
-		'./node_modules/bxslider/**/*',
-		'./node_modules/fancybox/**/*'
+		// './node_modules/jquery/**/*',
+		// './node_modules/bootstrap/**/*',
+		// './node_modules/bxslider/**/*',
+		// './node_modules/fancybox/**/*'
 	],
 
 	smartgrid: {
