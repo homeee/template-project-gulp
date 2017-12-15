@@ -1,7 +1,7 @@
 doctype html
 
-include ../_helpers/_mixins
-include ../_helpers/_vars
+include ./_helpers/_mixins
+include ./_helpers/_vars
 
 html(lang=json.language)
 head
@@ -10,8 +10,3 @@ head
 body
 	h1= json.projectName + ' pages'
 	+index(json.index)
-
-	h2 Testing
-	ul
-		li
-			a(href="test.html") Test

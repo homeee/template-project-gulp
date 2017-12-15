@@ -3,13 +3,12 @@ module.exports = {
 	projectName: 'projectName',
 	deployRepo: 'https://github.com/latushko-igor/latushko-igor.github.io.git',
 
-	libraries: [
-		'./source/scripts/vendor/jquery/dist/jquery.js',
-		'./source/scripts/vendor/svg4everybody/dist/svg4everybody.js'
-	],
-
-	plugins: [
-		'./source/scripts/vendor/{bx-slider.js,other_one}/**/*.*'
+	vendor: [
+		'./node_modules/jquery/**/*',
+		'./node_modules/svg4everybody/**/*',
+		'./node_modules/bootstrap/**/*',
+		'./node_modules/bxslider/**/*',
+		'./node_modules/fancybox/**/*'
 	],
 
 	smartgrid: {

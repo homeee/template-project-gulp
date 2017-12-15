@@ -48,8 +48,7 @@ $.gulp.task('watch', () => {
 	$.gulp.watch($.paths.dev.scss, $.gulp.series('scss:dev'));
 
 	$.gulp.watch([
-		$.settings.libraries,
-		$.settings.plugins,
+		$.settings.vendor,
 		$.paths.dev.scripts
 	], $.gulp.series('js:dev'));
 });

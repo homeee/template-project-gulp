@@ -1,21 +1,21 @@
 @charset "utf-8";
 
-@import '../_helpers/_vars';
-@import '../_helpers/_mixins';
-@import '../_helpers/_sprite';
-// @import '../_helpers/_smartgrid';
+@import './_helpers/_vars';
+@import './_helpers/_mixins';
+@import './_helpers/_sprite';
+// @import './_helpers/_smartgrid';
 
 /* reset */
 
-@import '../_partials/_reset';
+@import './_partials/_reset';
 
 /* base */
 
-@import '../_partials/_base';
+@import './_partials/_base';
 
 /* fonts */
 
-@import '../_partials/_fonts';
+@import './_partials/_fonts';
 
 /* common */
 

@@ -3,17 +3,17 @@ module.exports = {
 	dev: {
 		helpers: 				'./source/_helpers/',
 
-		data: 					'./source/pages/_data.json',
-		pages: 					'./source/pages/*.pug',
+		data: 					'./source/_data.json',
+		pages: 					'./source/*.pug',
 		pug: 					'./source/**/*.pug',
 
-		styles: 				'./source/pages/styles.scss',
+		styles: 				'./source/styles.scss',
 		scss: [
 								'./source/**/*.scss',
 								'!source/{_partials,_templates}/{_icons,_sprite}.scss',
 		],
 
-		scripts: 				'./source/scripts/*.js',
+		scripts: 				'./source/*.js',
 
 		favicons: 				'./source/media/favicons/*.{ico,png}',
 		fonts: 					'./source/media/fonts/**/*.{woff2,woff}',
@@ -44,8 +44,7 @@ module.exports = {
 		content: 				'./build/img/content',
 		favicons: 				'./build/img/favicons',
 		fonts: 					'./build/fonts',
-		libraries: 				'./build/js/libraries',
-		plugins: 				'./build/js/plugins',
+		vendor: 				'./build/js/vendor',
 		scripts: 				'./build/js'
 	}
 

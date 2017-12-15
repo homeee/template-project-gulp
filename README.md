@@ -5,31 +5,39 @@
 
 ## summary
 
+* _npm_ - package manager
 * _gulp_ - build system
-* _bower_ - frontend package manager
 * _pug_ - html-preprocessor & template engine
 * _scss_ - css-preprocessor
 * data - json
 * sprites - svg / png (retina including)
 * sticky footer on flexbox
 * index page - pages links
-* test page layout
 * deploying in github pages
 * flexbox grid system
 	- smartgrid
+* js libraries & plugins
+	- svg4everybody
+	- jquery
 	- bootstrap
+	- bxslider
+	- fancybox
+
+## requires
+
+* git
+* nodejs
+* yarn
 
 ## install
 
 * `git clone https://github.com/latushko-igor/template-project-gulp.git`
-* `npm i`
-* `bower i`
+* `yarn`
 * `gulp`
 
 ## working files
 
-* `./bower.json` - js libraries & plugins
-* `./gulp/settings.js` - projectName, libraries, plugins, smartgrid settings
+* `./gulp/settings.js` - projectName, libraries & plugins paths, smartgrid settings
 * `./_helpers` - vars & mixins (pug, scss)
 
 _partials_
@@ -42,7 +50,6 @@ _templates_
 
 * `./_templates/_layout.pug` - page template
 * `./_templates/_iframe.pug` - iframe template
-* `./_templates/_test.pug` - test template
 * `./_templates/_sprite.handlebars` - png sprite template
 
 _media_
@@ -56,14 +63,11 @@ _media_
 
 _pages_
 
-* `./pages/_data.json` - data for index page & project pages
-* `./pages/styles.scss` - main styles file
-* `./pages/home.pug` - page layout
-* `./pages/test.pug` - test layout
-
-_scripts_
-
-* `./scripts/scripts.js` - custom scripts
+* `./_data.json` - data for index page & project pages
+* `./styles.scss` - main styles file
+* `./scripts.js` - custom scripts
+* `./index.pug` - index layout
+* `./home.pug` - page layout
 
 ## howto
 

@@ -3,14 +3,11 @@
 # distribution folder
 build/
 
-# npm lock-file
-package-lock.json
+# lock-file
+yarn.json
 
-# npm packages
+# packages
 node_modules/
-
-# bower modules
-source/scripts/vendor/
 
 # tinypng tmp folder
 .gulp/

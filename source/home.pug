@@ -1,0 +1,47 @@
+extends ./_templates/_layout
+
+//- page vars
+
+block page_vars
+	-
+		page = {
+			name: 		'home',
+			title: 		'Home Page Title'
+		}
+
+//- styles & scripts
+
+block styles
+	//- link(rel='stylesheet' href='./js/vendor/bootstrap/dist/css/bootstrap.min.css')
+	//- link(rel='stylesheet' href='./js/vendor/bxslider/dist/jquery.bxslider.min.css')
+	//- link(rel='stylesheet' href='./js/vendor/fancybox/dist/jquery.fancybox.css')
+	link(rel='stylesheet' href='./css/styles.css')
+
+block scripts
+	script.
+		(() => {
+			//- head scripts
+		})();
+
+block js
+	script(src='./js/vendor/svg4everybody/dist/svg4everybody.min.js')
+	//- script(src='./js/vendor/jquery/dist/jquery.min.js')
+	//- script(src='./js/vendor/bootstrap/dist/js/bootstrap.min.js')
+	//- script(src='./js/vendor/bxslider/dist/jquery.bxslider.min.js')
+	//- script(src='./js/vendor/fancybox/dist/jquery.fancybox.pack.js')
+	//- script(src='./js/scripts.js')
+	script.
+		(() => {
+			//- body init plugins
+			svg4everybody();
+		})();
+
+//- content
+
+block main
+	main
+		p main
+
+block sidebar
+	aside.sidebar
+		p sidebar
