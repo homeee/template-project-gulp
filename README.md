@@ -5,7 +5,7 @@
 
 ## summary
 
-* _npm_ - package manager
+* _yarn_ - package manager
 * _gulp_ - build system
 * _pug_ - html-preprocessor & template engine
 * _scss_ - css-preprocessor
@@ -71,6 +71,10 @@ _pages_
 
 ## howto
 
+_deploy_
+
+* `gulp deploy`
+
 _svg sprite_
 
 ~~~pug
@@ -103,40 +107,7 @@ nav(block='navigation')
 	ul
 		li(elem='item', mod='active')
 			a(href='#', title='Home') Home
-		li(elem='item')
-			a(href='#', title='About') About
-		li(elem='item')
-			a(href='#', title='Contact') Contact
 ~~~
-
-_smart-grid_
-
-~~~pug
-.wrapper
-	.row
-		.col
-		.col
-~~~
-
-~~~scss
-.wrapper {
-	@include wrapper();
-
-	.row {
-		@include row-flex();
-		@include md(justify-content, space-between);
-
-		.col {
-			@include col();
-			@include size(n);
-		}
-	}
-}
-~~~
-
-_deploy_
-
-* `gulp deploy`
 
 ## packages
 
