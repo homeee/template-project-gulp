@@ -1,7 +1,7 @@
 module.exports = () => {
 
 	$.gulp.task('js:dev', () => {
-		var vendor = $.gulp.src($.settings.vendor)
+		var vendor = $.gulp.src($.settings.vendor, {base: $.paths.dev.packages})
 			.pipe($.gulp.dest($.paths.build.vendor));
 
 		var scripts = $.gulp.src($.paths.dev.scripts)
@@ -17,7 +17,7 @@ module.exports = () => {
 			.pipe($.gulp.dest($.paths.build.vendor));
 
 		var scripts = $.gulp.src($.paths.dev.scripts)
-			.pipe($.lp.concat('scripts.js'))
+			.pipe($.lp.concat('scripts.min.js'))
 			.pipe($.lp.uglifyes())
 			.pipe($.gulp.dest($.paths.build.scripts));
 

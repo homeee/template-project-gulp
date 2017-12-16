@@ -1,17 +1,15 @@
 module.exports = {
 
 	dev: {
-		helpers: 				'./source/_helpers/',
+		packages: 				'./node_modules',
+		helpers: 				'./source/_helpers',
 
 		data: 					'./source/_data.json',
 		pages: 					'./source/*.pug',
 		pug: 					'./source/**/*.pug',
 
 		styles: 				'./source/styles.scss',
-		scss: [
-								'./source/**/*.scss',
-								'!source/{_partials,_templates}/{_icons,_sprite}.scss',
-		],
+		scss: 					'./source/**/*.scss',
 
 		scripts: 				'./source/*.js',
 
