@@ -29,12 +29,13 @@ module.exports = () => {
 		var bg = $.gulp.src($.paths.dev.bg)
 			.pipe($.gulp.dest($.paths.build.bg));
 
+		// sprite
+
 		var spriteData = $.gulp.src($.paths.dev.raster)
 			.pipe($.lp.spritesmith({
-				retinaSrcFilter: $.paths.dev.raster2x_filter,
 				imgName: $.paths.dev.sprite_name,
-				retinaImgName: $.paths.dev.sprite2x_name,
 				cssName: $.paths.dev.sprite_scss_name,
+				cssTemplate: $.paths.dev.sprite_scss_tpl,
 				cssOpts: {
 					cssSelector: function (sprite) {
 						return '.sprite-' + sprite.name;
@@ -50,7 +51,31 @@ module.exports = () => {
 		var cssStream = spriteData.css
 			.pipe($.gulp.dest($.paths.dev.helpers));
 
-		return $.merge(bg, imgStream, cssStream)
+		// retina sprite
+
+		var retinaSpriteData = $.gulp.src($.paths.dev.raster2x)
+			.pipe($.lp.spritesmith({
+				retinaSrcFilter: $.paths.dev.raster2x_filter,
+				imgName: $.paths.dev.retina_sprite_name,
+				retinaImgName: $.paths.dev.retina_sprite2x_name,
+				cssName: $.paths.dev.sprite2x_scss_name,
+				cssTemplate: $.paths.dev.retina_sprite_scss_tpl,
+				cssOpts: {
+					cssSelector: function (sprite) {
+						return '.sprite-' + sprite.name;
+					}
+				},
+				padding: 2
+			}));
+
+		var retinaImgStream = retinaSpriteData.img
+			.pipe($.buffer())
+			.pipe($.gulp.dest($.paths.build.images));
+
+		var retinaCssStream = retinaSpriteData.css
+			.pipe($.gulp.dest($.paths.dev.helpers));
+
+		return $.merge(bg, imgStream, cssStream, retinaImgStream, retinaCssStream)
 			.on('end', $.browserSync.reload);
 	});
 

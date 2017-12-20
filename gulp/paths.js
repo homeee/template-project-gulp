@@ -1,49 +1,56 @@
 module.exports = {
 
 	dev: {
-		packages: 				'./node_modules',
-		helpers: 				'./source/_helpers',
+		packages: 					'./node_modules',
+		helpers: 					'./source/_helpers',
 
-		data: 					'./source/_data.json',
-		pages: 					'./source/*.pug',
-		pug: 					'./source/**/*.pug',
+		data: 						'./source/_data.json',
+		pages: 						'./source/*.pug',
+		pug: 						'./source/**/*.pug',
 
-		styles: 				'./source/styles.scss',
-		scss: 					'./source/**/*.scss',
+		styles: 					'./source/styles.scss',
+		scss: 						'./source/**/*.scss',
 
-		scripts: 				'./source/*.js',
+		scripts: 					'./source/*.js',
 
-		favicons: 				'./source/media/favicons/*.{ico,png}',
-		fonts: 					'./source/media/fonts/**/*.{woff2,woff}',
-		content_svg: 			'./source/media/content/*.svg',
-		content_raster: 		'./source/media/content/*.{jpeg,jpg,png}',
+		favicons: 					'./source/media/favicons/*.{ico,png}',
+		fonts: 						'./source/media/fonts/**/*.{woff2,woff}',
+		content_svg: 				'./source/media/content/*.svg',
+		content_raster: 			'./source/media/content/*.{jpeg,jpg,png}',
 
-		vector: 				'./source/media/appearance/svg/*.svg',
+		vector: 					'./source/media/appearance/svg/*.svg',
 		// relative to $.paths.build.img + '/symbol'
-			icons_name: 			'../icons.svg',
+			icons_name: 				'../icons.svg',
 
-		raster: 				'./source/media/appearance/*.{jpeg,jpg,png}',
-		raster2x_filter: 		'./source/media/appearance/*@2x.{jpeg,jpg,png}',
+		raster: 					'./source/media/appearance/*.{jpeg,jpg,png}',
+		raster2x: 					'./source/media/appearance/retina/*.{jpeg,jpg,png}',
+		raster2x_filter: 			'./source/media/appearance/retina/*@2x.{jpeg,jpg,png}',
+
 		// relative to $.paths.build.styles
 			sprite_name: 			'../img/sprite.png',
-			sprite2x_name: 			'../img/sprite@2x.png',
-		sprite_scss_name: 		'_sprite.scss',
-		sprite_scss_tpl: 		'./source/_templates/_sprite.handlebars',
+			retina_sprite_name: 	'../img/retina-sprite.png',
+			retina_sprite2x_name: 	'../img/retina-sprite@2x.png',
 
-		bg: 					'./source/media/appearance/bg/*.{jpeg,jpg,png}'
+		sprite_scss_name: 			'_sprite.scss',
+		sprite2x_scss_name: 		'_sprite@2x.scss',
+
+		sprite_scss_tpl: 			'./source/_templates/_scss.sprite',
+		retina_sprite_scss_tpl: 	'./source/_templates/_scss.retina.sprite',
+
+		bg: 						'./source/media/appearance/bg/*.{jpeg,jpg,png}'
 	},
 
 	build: {
-		tinypng_tmp: 			'./.gulp',
-		dir: 					'./build',
-		styles: 				'./build/css',
-		images: 				'./build/img',
-		bg: 					'./build/img/bg/',
-		content: 				'./build/img/content',
-		favicons: 				'./build/img/favicons',
-		fonts: 					'./build/fonts',
-		vendor: 				'./build/js/vendor',
-		scripts: 				'./build/js'
+		tinypng_tmp: 				'./.gulp',
+		dir: 						'./build',
+		styles: 					'./build/css',
+		images: 					'./build/img',
+		bg: 						'./build/img/bg/',
+		content: 					'./build/img/content',
+		favicons: 					'./build/img/favicons',
+		fonts: 						'./build/fonts',
+		vendor: 					'./build/js/vendor',
+		scripts: 					'./build/js'
 	}
 
 };

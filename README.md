@@ -10,7 +10,7 @@
 * _pug_ - html-preprocessor & template engine
 * _scss_ - css-preprocessor
 * data - json
-* sprites - svg / png (retina including)
+* sprites - svg / png / png retina
 * sticky footer on flexbox
 * index page - pages links
 * deploying in github pages
@@ -48,14 +48,16 @@ _partials_
 
 _templates_
 
-* `./_templates/_layout.pug` - page template
-* `./_templates/_iframe.pug` - iframe template
-* `./_templates/_sprite.handlebars` - png sprite template
+* `./_templates/_layout.pug` - page
+* `./_templates/_iframe.pug` - iframe
+* `./_templates/_scss.sprite` - png sprite
+* `./_templates/_scss.retina.sprite` - png retina sprite
 
 _media_
 
 * `./media/appearance/svg/*.svg` - svg sprite source
-* `./media/appearance/*.png` - png sprite source (*@2x including)
+* `./media/appearance/retina/*.png` - png retina sprite source
+* `./media/appearance/*.png` - png sprite source
 * `./media/appearance/bg/*` - background images
 * `./media/content/*` - content pictures
 * `./media/favicons/*` - favicons
@@ -67,7 +69,7 @@ _pages_
 * `./styles.scss` - main styles file
 * `./scripts.js` - custom scripts
 * `./index.pug` - index layout
-* `./home.pug` - page layout
+* `./page.pug` - page layout
 
 ## howto
 
@@ -106,7 +108,7 @@ _beml_
 nav(block='navigation')
 	ul
 		li(elem='item', mod='active')
-			a(href='#', title='Home') Home
+			a(href='#', title='Page') Page
 ~~~
 
 ## packages

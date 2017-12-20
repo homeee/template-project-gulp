@@ -1,6 +1,7 @@
 module.exports = {
 
 	projectName: 'projectName',
+	index: 'index.html',
 	deployRepo: 'https://github.com/latushko-igor/latushko-igor.github.io.git',
 
 	vendor: [

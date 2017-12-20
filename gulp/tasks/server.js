@@ -6,7 +6,8 @@ module.exports = () => {
 			open: true,
 			reloadOnRestart: true,
 			server: {
-				baseDir: $.paths.build.dir
+				baseDir: $.paths.build.dir,
+				index: $.settings.index
 			},
 			port: 8080
 		})
