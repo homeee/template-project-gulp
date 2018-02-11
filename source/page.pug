@@ -19,22 +19,22 @@ block styles
 
 block scripts
 	script.
-		(() => {
+		$(document).ready(function() {
 			//- head scripts
-		})();
+		});
 
 block js
 	script(src='./js/vendor/svg4everybody/dist/svg4everybody.min.js')
-	//- script(src='./js/vendor/jquery/dist/jquery.min.js')
+	script(src='./js/vendor/jquery/dist/jquery.min.js')
 	//- script(src='./js/vendor/bootstrap/dist/js/bootstrap.min.js')
 	//- script(src='./js/vendor/bxslider/dist/jquery.bxslider.min.js')
 	//- script(src='./js/vendor/fancybox/dist/jquery.fancybox.pack.js')
 	script(src='./js/scripts.js')
 	script.
-		(() => {
+		$(document).ready(function() {
 			//- body init plugins
 			svg4everybody();
-		})();
+		});
 
 //- content
 

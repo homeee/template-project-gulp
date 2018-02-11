@@ -37,6 +37,7 @@
 
 ## working files
 
+* `./package.json` - name
 * `./gulp/settings.js` - projectName, libraries & plugins paths, smartgrid settings
 * `./_helpers` - vars & mixins (pug, scss)
 
@@ -50,8 +51,14 @@ _templates_
 
 * `./_templates/_layout.pug` - page
 * `./_templates/_iframe.pug` - iframe
-* `./_templates/_scss.sprite` - png sprite
-* `./_templates/_scss.retina.sprite` - png retina sprite
+
+_pages_
+
+* `./_data.json` - data for index page & project pages
+* `./styles.scss` - main styles file
+* `./scripts.js` - custom scripts
+* `./index.pug` - index layout
+* `./page.pug` - page layout
 
 _media_
 
@@ -62,14 +69,6 @@ _media_
 * `./media/content/*` - content pictures
 * `./media/favicons/*` - favicons
 * `./media/fonts` - fonts
-
-_pages_
-
-* `./_data.json` - data for index page & project pages
-* `./styles.scss` - main styles file
-* `./scripts.js` - custom scripts
-* `./index.pug` - index layout
-* `./page.pug` - page layout
 
 ## howto
 

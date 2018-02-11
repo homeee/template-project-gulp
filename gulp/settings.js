@@ -6,7 +6,7 @@ module.exports = {
 
 	vendor: [
 		'./node_modules/svg4everybody/**/*',
-		// './node_modules/jquery/**/*',
+		'./node_modules/jquery/**/*',
 		// './node_modules/bootstrap/**/*',
 		// './node_modules/bxslider/**/*',
 		// './node_modules/fancybox/**/*'
